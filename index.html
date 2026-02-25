@@ -3,22 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repertorio | Coro delle Vertighe</title>
-    </head>
+    <title>Coro delle Vertighe | Nuovo Sito</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+  
 <body>
+    
+    <nav>
+        <button onclick="apriCassetto('home')">Home</button>
+        <button onclick="apriCassetto('concerti')">Prossimi Concerti</button>
+    </nav>
+  
 
-    <header>
-        <h1>Coro del Santuario delle Vertighe</h1>
-        <p>Archivio Digitale del Repertorio Liturgico</p>
+    <header class="hero">
+        <div class="hero-contenuto">
+            <h1>Canta e Cammina</h1>
+            <h2>Coro delle Vertighe<br>Fraternità Francescana di Betania</h2>
+        </div>
     </header>
+  
 
-    <main>
-        <p>In attesa di collegamento al database...</p>
-    </main>
+    <section id="concerti" class="cassetto">
+        <h2>Le nostre date</h2>
+        <p>Qui in futuro appariranno i dati magici del Foglio Google.</p>
+    </section>
 
-    <footer>
-        <p>Servizio musicale per la liturgia - Nobile Semplicità</p>
-    </footer>
+    <script src="js/script.js"></script>
 
 </body>
+  
 </html>

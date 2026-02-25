@@ -1,0 +1,59 @@
+body {
+    background-color: #f0f4f8; /* Un grigio-azzurro molto elegante e leggero */
+    font-family: 'Helvetica', Arial, sans-serif; /* Un font pulito e senza fronzoli */
+    margin: 0;
+    padding: 0;
+}
+
+
+.hero h1 {
+    font-family: 'Georgia', serif; 
+    font-size: 3em; 
+    margin-bottom: 10px;
+    color: white; /* <-- Ecco la magia che sconfigge il blu! */
+}
+
+
+/* Stile di base per tutti i cassetti */
+.cassetto {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px; /* Arrotondiamo un po' gli angoli! */
+    margin: 20px;
+}
+
+/* Nascondiamo subito il cassetto dei concerti! */
+#concerti {
+    display: none; 
+}
+
+
+
+
+/* --- STILI DEL PALCOSCENICO (HERO) --- */
+.hero {
+    /* Ecco la magia: prima la lente scura (0.6), poi la foto! */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/img/sfondo.jpg');
+    background-size: cover; /* Fai in modo che la foto copra tutto lo spazio */
+    background-position: center; /* Centra la foto */
+    height: 60vh; /* Altezza: occupa il 60% dello schermo (Viewport Height) */
+    
+    /* Le 3 paroline magiche per l'allineamento: */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    
+    text-align: center;
+    color: white; /* Tutto il testo qui dentro sarà bianco */
+}
+
+.hero h1 {
+    font-family: 'Georgia', serif; /* Un font elegante e solenne */
+    font-size: 3em; /* 3 volte più grande del normale */
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-weight: normal;
+    font-size: 1.5em;
+}
