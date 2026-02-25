@@ -57,3 +57,37 @@ body {
     font-weight: normal;
     font-size: 1.5em;
 }
+
+
+/* --- STILI DELLA CARD CENTRALE --- */
+.contenitore-principale {
+    max-width: 900px; /* Non farla allargare all'infinito sugli schermi giganti */
+    margin: 0 auto; /* Centra la scatola nello schermo */
+    padding: 0 20px;
+}
+
+.card-liturgia {
+    background-color: white;
+    border-radius: 15px; /* Angoli morbidi ed eleganti */
+    padding: 40px;
+    text-align: center;
+    color: #333; /* Un grigio scuro, più leggibile del nero puro */
+    
+    /* L'ombra che fa l'effetto 3D "sollevato" */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); 
+    
+    /* Il trucco segreto della sovrapposizione! */
+    margin-top: -60px; 
+    position: relative;
+}
+
+/* --- IL MAGGIORDOMO FLEXBOX --- */
+.vassoio-icone {
+    display: flex; /* Attiviamo il maggiordomo! */
+    justify-content: space-around; /* Come distribuisce lo spazio */
+    margin-top: 40px;
+}
+
+.icona {
+    font-size: 40px; /* Grandezza delle emoji */
+}
