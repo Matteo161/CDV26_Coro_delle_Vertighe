@@ -93,6 +93,43 @@ body {
 }
 
 
+
+/* --- STILI BARRA DI RICERCA (STILE GOOGLE) --- */
+.barra-ricerca {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    padding: 12px 20px;
+    margin: 0 auto 30px auto; /* Spazio sotto la barra */
+    max-width: 500px; /* Larghezza massima */
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    transition: box-shadow 0.3s;
+}
+
+.barra-ricerca input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    margin-left: 10px;
+    color: #333;
+}
+
+/* Stile per il link del PDF che appare */
+.risultato-item {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1a0dab;
+    font-weight: bold;
+    border: 1px solid #eee;
+}
+
+
 /* --- IL SITO DI GOMMA (Design Responsivo per Cellulari) --- */
 @media (max-width: 768px) {
     
