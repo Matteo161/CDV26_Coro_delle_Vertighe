@@ -91,3 +91,24 @@ body {
 .icona {
     font-size: 40px; /* Grandezza delle emoji */
 }
+
+
+/* --- IL SITO DI GOMMA (Design Responsivo per Cellulari) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Impiliamo le icone in verticale */
+    .vassoio-icone {
+        flex-direction: column; /* La vera magia! Cambia da riga a colonna */
+        gap: 30px; /* Aggiunge 30px di spazio vuoto tra una colonna e l'altra per farle respirare */
+    }
+    
+    /* 2. Ottimizziamo gli spazi: sul cellulare servono testi più piccoli e scatole meno ingombranti */
+    .hero h1 {
+        font-size: 2em; /* Rimpiccioliamo un po' il titolo gigante */
+    }
+    
+    .card-liturgia {
+        padding: 20px; /* Togliamo un po' di imbottitura bianca interna per dare più spazio ai testi */
+        margin-top: -30px; /* Solleviamo la card un po' meno rispetto al computer */
+    }
+}
