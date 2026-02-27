@@ -3,52 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coro delle Vertighe | Canta e Cammina</title>
+    <title>Coro delle Vertighe | Archivio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header class="hero">
-        <div class="hero-contenuto">
-            <h1>Canta e Cammina</h1>
-            <h2>Coro delle Vertighe<br>Fraternità Francescana di Betania</h2>
-        </div>
-    </header>
-
-    <main class="contenitore-principale">
-        <section class="card-liturgia">
-            <h3>Liturgia di Domenica 14 Gennaio</h3>
-            <p>Tempo Liturgico: V Domenica del Tempo Ordinario | Offertorio (PDF), Comunione (PDF)</p>
-
-        <div class="barra-ricerca">
-            <span class="lente">🔍</span>
-            <input type="text" id="cerca-spartito" placeholder="Cerca un canto, un autore o uno spartito...">
-        </div>
-
-    <div id="area-risultati" style="display: none;">
-        <a href="./assets/pdf/CDV001_Christus_Vincit.pdf" target="_blank" class="risultato-item">
-            📄 CDV 001 - Christus Vincit (PDF)
-        </a>
+    <div id="bg-container">
+        <div class="slide active" style="background-image: url('assets/img/santuario_esterno_2025.jpg');"></div>
+        
+        <div class="slide" style="background-image: url('https://picsum.photos/id/106/1920/1080');"></div>
+        <div class="slide" style="background-image: url('https://picsum.photos/id/234/1920/1080');"></div>
+        
+        <div class="overlay-light"></div>
     </div>
 
-            <div class="vassoio-icone">
-    <div class="colonna">
-        <span class="icona">📚</span>
-        <p>Strumenti</p>
-    </div>
-    <div class="colonna">
-        <span class="icona">⛪</span>
-        <p>Prove & Liturgia</p>
-    </div>
-    <div class="colonna">
-        <span class="icona">👥</span>
-        <p>Il Coro</p>
-    </div>
-</div>
+    <div id="main-scroll-container">
 
+        <section id="hero">
+            <div class="search-wrapper-container">
+                <a href="index.html" id="main-title">Coro delle Vertighe</a>
+                
+                <input type="text" id="main-search" placeholder="Che cercate?">
+                
+                <p id="main-motto">Canta e Cammina</p>
+            </div>
         </section>
-    </main>
 
+        <div id="results-container" class="hidden">
+            <div class="result-placeholder">
+                <h3>Risultati della ricerca...</h3>
+                <p>Qui appariranno i canti man mano che scrivi.</p>
+            </div>
+            </div>
+
+        <section id="secondary-sections">
+            <div class="cards-grid">
+                
+                <a href="#" class="card-button">
+                    <span class="icon">🎻</span>
+                    <h3>Strumenti</h3>
+                    <p>Repertorio e studio</p>
+                </a>
+                
+                <a href="#" class="card-button">
+                    <span class="icon">⛪</span>
+                    <h3>Prove & Liturgia</h3>
+                    <p>Programmi e calendari</p>
+                </a>
+                
+                <a href="#" class="card-button">
+                    <span class="icon">👥</span>
+                    <h3>Coro & Santuario</h3>
+                    <p>La nostra fraternità</p>
+                </a>
+                
+            </div>
+            
+            <footer>
+                © 2026 Coro delle Vertighe - Fraternità Francescana di Betania
+            </footer>
+        </section>
+
+    </div>
+
+    <script src="js/database.js"></script>
     <script src="js/script.js"></script>
 
 </body>

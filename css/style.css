@@ -1,151 +1,144 @@
+/* =========================================
+   CORO DELLE VERTIGHE - STILE PRINCIPALE
+   ========================================= */
+
+/* --- 1. VARIABILI GLOBALI E RESET --- */
+:root {
+    --colore-primario: #0056b3; /* Un blu solido per testi importanti */
+    --colore-accento: #e6f2ff; /* Azzurro chiarissimo per sfondi e hover */
+    --bianco-puro: #ffffff;
+    --ombra-morbida: 0 10px 30px rgba(0, 86, 179, 0.1); /* Ombra leggermente azzurrata */
+    --velocita-transizione: 0.9s cubic-bezier(0.25, 1, 0.5, 1); /* Movimento fluido "Apple" */
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
 body {
-    background-color: #f0f4f8; /* Un grigio-azzurro molto elegante e leggero */
-    font-family: 'Helvetica', Arial, sans-serif; /* Un font pulito e senza fronzoli */
-    margin: 0;
-    padding: 0;
-}
-
-
-.hero h1 {
-    font-family: 'Georgia', serif; 
-    font-size: 3em; 
-    margin-bottom: 10px;
-    color: white; /* <-- Ecco la magia che sconfigge il blu! */
-}
-
-
-/* Stile di base per tutti i cassetti */
-.cassetto {
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px; /* Arrotondiamo un po' gli angoli! */
-    margin: 20px;
-}
-
-/* Nascondiamo subito il cassetto dei concerti! */
-#concerti {
-    display: none; 
-}
-
-
-
-
-/* --- STILI DEL PALCOSCENICO (HERO) --- */
-.hero {
-    /* Ecco la magia: prima la lente scura (0.6), poi la foto! */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/img/sfondo.jpg');
-    background-size: cover; /* Fai in modo che la foto copra tutto lo spazio */
-    background-position: center; /* Centra la foto */
-    height: 60vh; /* Altezza: occupa il 60% dello schermo (Viewport Height) */
-    
-    /* Le 3 paroline magiche per l'allineamento: */
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    
-    text-align: center;
-    color: white; /* Tutto il testo qui dentro sarà bianco */
-}
-
-.hero h1 {
-    font-family: 'Georgia', serif; /* Un font elegante e solenne */
-    font-size: 3em; /* 3 volte più grande del normale */
-    margin-bottom: 10px;
-}
-
-.hero h2 {
-    font-weight: normal;
-    font-size: 1.5em;
-}
-
-
-/* --- STILI DELLA CARD CENTRALE --- */
-.contenitore-principale {
-    max-width: 900px; /* Non farla allargare all'infinito sugli schermi giganti */
-    margin: 0 auto; /* Centra la scatola nello schermo */
-    padding: 0 20px;
-}
-
-.card-liturgia {
-    background-color: white;
-    border-radius: 15px; /* Angoli morbidi ed eleganti */
-    padding: 40px;
-    text-align: center;
-    color: #333; /* Un grigio scuro, più leggibile del nero puro */
-    
-    /* L'ombra che fa l'effetto 3D "sollevato" */
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); 
-    
-    /* Il trucco segreto della sovrapposizione! */
-    margin-top: -60px; 
-    position: relative;
-}
-
-/* --- IL MAGGIORDOMO FLEXBOX --- */
-.vassoio-icone {
-    display: flex; /* Attiviamo il maggiordomo! */
-    justify-content: space-around; /* Come distribuisce lo spazio */
-    margin-top: 40px;
-}
-
-.icona {
-    font-size: 40px; /* Grandezza delle emoji */
-}
-
-
-
-/* --- STILI BARRA DI RICERCA (STILE GOOGLE) --- */
-.barra-ricerca {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border: 1px solid #dfe1e5;
-    border-radius: 24px;
-    padding: 12px 20px;
-    margin: 0 auto 30px auto; /* Spazio sotto la barra */
-    max-width: 500px; /* Larghezza massima */
-    box-shadow: 0 1px 6px rgba(32,33,36,.28);
-    transition: box-shadow 0.3s;
-}
-
-.barra-ricerca input {
-    border: none;
-    outline: none;
-    width: 100%;
-    font-size: 16px;
-    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bianco-puro);
     color: #333;
+    overflow-x: hidden; /* Evita lo scroll orizzontale */
 }
 
-/* Stile per il link del PDF che appare */
-.risultato-item {
+/* =========================================
+   2. SFONDO E SLIDER IMMAGINI
+   ========================================= */
+#bg-container {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100vh;
+    z-index: -1; /* Mantiene lo sfondo dietro a tutto il contenuto */
+    transition: opacity var(--velocita-transizione), filter var(--velocita-transizione);
+}
+
+.slide {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-size: cover; 
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.05); /* Leggero zoom iniziale */
+    transition: opacity 3s ease-in-out; /* Cambio foto molto lento */
+}
+
+.slide.active { 
+    opacity: 1; 
+    transform: scale(1); /* Ritorna alla dimensione normale */
+    transition: opacity 3s ease-in-out, transform 5s ease-out;
+}
+
+.overlay-light {
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    /* Sfumatura da bianco in alto a semitrasparente in basso per leggibilità */
+    background: linear-gradient(to bottom, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.1) 100%);
+}
+
+/* --- Transizioni dello Sfondo in base allo stato --- */
+body.is-scrolled #bg-container { 
+    opacity: 0.2; 
+    filter: blur(10px); /* Sfoca lo sfondo scendendo */
+}
+
+body.is-searching #bg-container { 
+    opacity: 0; /* Nasconde lo sfondo durante la ricerca */
+}
+
+
+/* =========================================
+   3. SEZIONE HERO (TITOLO E BARRA RICERCA)
+   ========================================= */
+#hero {
+    min-height: 100vh; /* Occupa tutto lo schermo all'avvio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: all var(--velocita-transizione);
+}
+
+.search-wrapper-container {
+    width: 100%;
+    max-width: 900px; /* Spazio per la barra allargata */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra orizzontalmente tutti gli elementi */
+    text-align: center;
+}
+
+/* --- TITOLO PRINCIPALE (Modern Fluid Typography) --- */
+#main-title {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
+    /* Usa clamp() per ridimensionarsi automaticamente senza andare a capo */
+    font-size: clamp(1.8rem, 8vw, 4.5rem); 
+    font-weight: 700;
+    color: var(--colore-primario);
     text-decoration: none;
-    color: #1a0dab;
-    font-weight: bold;
-    border: 1px solid #eee;
+    text-transform: uppercase;
+    letter-spacing: -1px; /* Look compatto e moderno */
+    white-space: nowrap; /* Impedisce SEMPRE l'andata a capo */
+    margin-bottom: 25px;
+    /* Profondità con ombra leggera */
+    text-shadow: 0 10px 20px rgba(0, 86, 179, 0.1);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-
-/* --- IL SITO DI GOMMA (Design Responsivo per Cellulari) --- */
-@media (max-width: 768px) {
-    
-    /* 1. Impiliamo le icone in verticale */
-    .vassoio-icone {
-        flex-direction: column; /* La vera magia! Cambia da riga a colonna */
-        gap: 30px; /* Aggiunge 30px di spazio vuoto tra una colonna e l'altra per farle respirare */
-    }
-    
-    /* 2. Ottimizziamo gli spazi: sul cellulare servono testi più piccoli e scatole meno ingombranti */
-    .hero h1 {
-        font-size: 2em; /* Rimpiccioliamo un po' il titolo gigante */
-    }
-    
-    .card-liturgia {
-        padding: 20px; /* Togliamo un po' di imbottitura bianca interna per dare più spazio ai testi */
-        margin-top: -30px; /* Solleviamo la card un po' meno rispetto al computer */
-    }
+#main-title:hover {
+    transform: scale(1.02);
+    filter: brightness(1.2);
 }
+
+/* --- MOTTO (Stile Scritto a Mano) --- */
+#main-motto {
+    font-family: 'Dancing Script', cursive; /* Richiede importazione in HTML */
+    font-size: clamp(1.2rem, 4vw, 2.2rem);
+    color: var(--colore-primario);
+    margin-top: 25px;
+    opacity: 0.9;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5); /* Sottile bagliore */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* --- BARRA DI RICERCA --- */
+#main-search {
+    width: 100%;
+    max-width: 650px; /* Larghezza controllata per mantenere l'equilibrio */
+    padding: 22px 40px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    color: var(--colore-primario);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    background: rgba(2
