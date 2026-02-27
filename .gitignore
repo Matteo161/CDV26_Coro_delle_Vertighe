@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+# Ignore DS_Store anywhere
+*.DS_Store
+
+# Optional: ignore VSCode settings and system files
+.vscode/
+*.log
