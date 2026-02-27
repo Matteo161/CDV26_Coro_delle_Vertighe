@@ -141,4 +141,257 @@ body.is-searching #bg-container {
     color: var(--colore-primario);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 50px;
-    background: rgba(2
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px); /* Effetto Vetro (Glassmorphism) */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    outline: none;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+#main-search::placeholder { 
+    color: #99aabd; 
+    opacity: 1; 
+    transition: opacity 0.3s;
+}
+
+#main-search:focus { 
+    box-shadow: 0 15px 40px rgba(0, 86, 179, 0.15); 
+    transform: translateY(-2px); 
+}
+
+/* --- TRANSIZIONI: STATO "RICERCA ATTIVA" --- */
+body.is-searching #hero {
+    min-height: 20vh; /* La sezione si accorcia */
+    align-items: flex-start; /* Gli elementi scorrono in alto */
+    padding-top: 60px;
+}
+
+body.is-searching #main-title {
+    font-size: 1.4rem; /* Il titolo diventa piccolo */
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+body.is-searching #main-search::placeholder { 
+    opacity: 0; /* Nasconde il testo di suggerimento */
+}
+
+body.is-searching #main-motto,
+body.is-scrolled #main-motto {
+    opacity: 0; /* Nasconde il motto */
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+
+/* =========================================
+   4. AREA RISULTATI (Ricerca Attiva)
+   ========================================= */
+#results-container {
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 20px;
+    opacity: 0; 
+    transform: translateY(20px); /* Posizione iniziale nascosta in basso */
+    transition: all 0.5s ease;
+}
+
+.hidden { display: none; }
+
+body.is-searching #results-container:not(.hidden) {
+    opacity: 1; 
+    transform: translateY(0); /* Appare spostandosi verso l'alto */
+    transition-delay: 0.3s; /* Ritardo per far prima scivolare la barra */
+}
+
+.result-placeholder { 
+    text-align: center; 
+    padding: 50px; 
+    color: #99aabd; 
+}
+
+
+/* =========================================
+   5. SEZIONE SECONDARIA (I 3 BOTTONI SCROLL)
+   ========================================= */
+#secondary-sections {
+    min-height: 80vh; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    padding: 50px 20px;
+    opacity: 0; 
+    transform: translateY(50px);
+    transition: all var(--velocita-transizione);
+}
+
+/* Appaiono solo quando si scrolla (e la ricerca è inattiva) */
+body.is-scrolled:not(.is-searching) #secondary-sections {
+    opacity: 1; 
+    transform: translateY(0);
+}
+
+body.is-searching #secondary-sections { 
+    display: none; 
+}
+
+.cards-grid {
+    display: flex; 
+    gap: 30px; 
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.card-button {
+    background: var(--bianco-puro);
+    text-decoration: none; 
+    color: #333;
+    padding: 40px 30px;
+    border-radius: 25px;
+    box-shadow: var(--ombra-morbida);
+    text-align: center;
+    min-width: 250px;
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-button:hover {
+    transform: translateY(-10px); /* Effetto sollevamento */
+    box-shadow: 0 20px 40px rgba(0, 86, 179, 0.15);
+    border-color: var(--colore-accento);
+}
+
+.icon { 
+    font-size: 3rem; 
+    display: block; 
+    margin-bottom: 20px; 
+}
+
+.card-button h3 { 
+    color: var(--colore-primario); 
+    margin-bottom: 10px; 
+    font-weight: 600;
+}
+
+.card-button p { 
+    color: #666; 
+    font-size: 0.9rem; 
+}
+											  
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+footer { 
+    margin-top: 80px; 
+    color: #99aabd; 
+    font-size: 0.9rem; 
+}
+											  
+
+/* =========================================
+   7. STILE DELLE CARD EVOLUTE E MATERIALI
+   ========================================= */
+
+.result-card-evolved {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: var(--ombra-morbida);
+    border: 1px solid rgba(0, 86, 179, 0.1);
+    text-align: left; /* Allinea il testo a sinistra per eleganza */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.result-card-evolved:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 86, 179, 0.15);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.tag-numero {
+    background: var(--colore-primario);
+    color: var(--bianco-puro);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+.card-header h4 {
+    color: var(--colore-primario);
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.card-subtitle {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    padding-left: 70px; /* Si allinea sotto il titolo, saltando il numerino azzurro */
+}
+
+/* --- LA GRIGLIA DEI PULSANTI MULTIPLI --- */
+.materiali-grid {
+    display: flex;
+    flex-wrap: wrap; /* Se ci sono tanti pulsanti, vanno a capo da soli */
+    gap: 10px;
+    padding-left: 70px; 
+}
+
+/* Stile base di tutti i bottoncini */
+.btn-materiale {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+/* Colore per i PDF (Rosso/Rosa) */
+.btn-pdf {
+    background-color: #fce8e6;
+    color: #d93025;
+    border: 1px solid rgba(217, 48, 37, 0.2);
+}
+.btn-pdf:hover { background-color: #d93025; color: white; }
+
+/* Colore per Audio Completo (Verde) */
+.btn-audio {
+    background-color: #e6f4ea;
+    color: #188038;
+    border: 1px solid rgba(24, 128, 56, 0.2);
+}
+.btn-audio:hover { background-color: #188038; color: white; }
+
+/* Colore per le Singole Voci: S, C, T, B (Azzurro, quadrati piccoli) */
+.btn-voce {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    border: 1px solid rgba(26, 115, 232, 0.2);
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+    padding: 0;
+    border-radius: 12px; /* Un po' più squadrati per le singole lettere */
+}
+.btn-voce:hover { background-color: #1a73e8; color: white; }											  
+											  
+											  
+											  
