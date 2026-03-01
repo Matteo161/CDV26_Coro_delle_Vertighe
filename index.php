@@ -1,103 +1,48 @@
-<?php
-session_start(); // Inizia a ricordare chi è l'utente
-
-// Definiamo le credenziali (come hai chiesto tu)
-$username_coro = "corista";
-$password_coro = "ADV2026";
-
-// Logica per il Logout (se vuoi uscire)
-if (isset($_GET['action']) && $_GET['action'] == 'logout') {
-    session_destroy();
-    header("Location: index.php");
-    exit;
-}
-
-// Logica per il Login
-$errore = "";
-if (isset($_POST['login'])) {
-    if ($_POST['username'] == $username_coro && $_POST['password'] == $password_coro) {
-        $_SESSION['autorizzato'] = true;
-    } else {
-        $errore = "Credenziali errate, riprova.";
-    }
-}
+<?php 
+session_start();
+include 'header.php'; 
 ?>
 
-
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coro delle Vertighe | Archivio</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-  
-    <div id="bg-container">
-        
-        <div class="overlay-light"></div>
-	  
+<section id="hero-public">
+    <div class="public-cards-wrapper">
+        <a href="#sezione-coro" class="public-card">
+            <h3>Coro</h3>
+        </a>
+        <a href="#sezione-ffb" class="public-card">
+            <h3>FFB</h3>
+        </a>
+        <a href="#sezione-santuario" class="public-card">
+            <h3>Santuario</h3>
+        </a>
     </div>
-  
+</section>
 
-    <div id="main-scroll-container">
+<div class="content-sections-container">
+    
+    <section id="sezione-coro" class="info-section">
+        <div class="testo-sezione">
+            <h2>Il Coro delle Vertighe</h2>
+            <p>Qui potrai inserire la storia del coro, da quanti anni cantate insieme, i nomi dei direttori, lo stile del vostro repertorio. Un bel paragrafo accogliente per chi vuole conoscervi.</p>
+        </div>
+        <div class="immagine-sezione" style="background-image: url('assets/img/foto_coro.jpg');"></div>
+    </section>
 
-        <section id="hero">
-            <div class="search-wrapper-container">
-                <a href="index.html" id="main-title">Coro delle Vertighe</a>
-                
-                <input type="text" id="main-search" placeholder="Che cercate?">
-                
-                <p id="main-motto">Canta e Cammina</p>
-            </div>
-        </section>
+    <section id="sezione-ffb" class="info-section bg-grigio">
+        <div class="immagine-sezione" style="background-image: url('assets/img/foto_ffb.jpg');"></div>
+        <div class="testo-sezione">
+            <h2>La Fraternità Francescana di Betania</h2>
+            <p>Qui puoi raccontare il carisma della Fraternità, la spiritualità francescana e il legame profondo che unisce il coro alla vita dei frati e delle suore.</p>
+        </div>
+    </section>
 
-        <div id="results-container" class="hidden">
-            <div class="result-placeholder">
-                <h3>Risultati della ricerca...</h3>
-                <p>Qui appariranno i canti man mano che scrivi.</p>
-            </div>
-            </div>
+    <section id="sezione-santuario" class="info-section">
+        <div class="testo-sezione">
+            <h2>Santuario S. Maria delle Vertighe</h2>
+            <p>Informazioni sul Santuario, orari delle Messe, indirizzo, e cenni storici sull'edificio e la devozione mariana.</p>
+        </div>
+        <div class="immagine-sezione" style="background-image: url('assets/img/santuario_esterno_2025.jpg');"></div>
+    </section>
 
-        <section id="secondary-sections">
-            <div class="cards-grid">
-                
-                <a href="#" class="card-button">
-                    <span class="icon">🎻</span>
-                    <h3>Strumenti</h3>
-                    <p>Repertorio e studio</p>
-                </a>
-                
-                <a href="#" class="card-button">
-                    <span class="icon">⛪</span>
-                    <h3>Prove & Liturgia</h3>
-                    <p>Programmi e calendari</p>
-                </a>
-                
-                <a href="#" class="card-button">
-                    <span class="icon">👥</span>
-                    <h3>Coro & Santuario</h3>
-                    <p>La nostra fraternità</p>
-                </a>
-                
-            </div>
-            
-            <footer>
-                © 2026 Coro delle Vertighe - Fraternità Francescana di Betania
-            </footer>
-        </section>
-
-    </div>
-
-    <script src="js/database.js"></script>
-    <script src="js/script.js"></script>
-
-</body>
-</html>
+</div> <?php 
+include 'footer.php'; 
+?>

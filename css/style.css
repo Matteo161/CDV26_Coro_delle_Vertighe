@@ -288,10 +288,22 @@ body.is-searching #secondary-sections {
 /* =========================================
    6. FOOTER
    ========================================= */
+
+   #footer-section {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    padding: 40px 20px;
+    position: relative;
+    z-index: 10;
+}
+
 footer { 
-    margin-top: 80px; 
-    color: #99aabd; 
-    font-size: 0.9rem; 
+    text-align: center;
+    color: #3b424a; /* Grigio cenere scuro/antracite */
+    font-size: 0.95rem; 
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(255,255,255,0.6); /* Aiuta la leggibilità sullo sfondo */
 }
 											  
 
@@ -397,4 +409,340 @@ footer {
 .btn-voce:hover { background-color: #1a73e8; color: white; }											  
 											  
 											  
-											  
+
+/* =========================================
+   8. STILE MODULO DI LOGIN
+   ========================================= */
+
+#login-box {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: var(--ombra-morbida);
+    width: 100%;
+    max-width: 400px; /* Più stretto della barra ricerca */
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-input {
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 86, 179, 0.1);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.login-input:focus {
+    border-color: var(--colore-primario);
+    background: white;
+}
+
+.login-button {
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    background: var(--colore-primario);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+.error-message {
+    color: #d93025;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   9. VETRINA PUBBLICA E MENU (In base al disegno)
+   ========================================= */
+
+/* Posizionamento fisso del titolo nell'header */
+.header-titles {
+    text-align: center;
+    padding-top: 50px;
+    position: relative;
+    z-index: 10;
+}
+
+#hero-public {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.public-cards-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+
+.public-card {
+    background: rgba(255, 255, 255, 0.15); /* Abbassato da 0.35 a 0.15 per una trasparenza quasi totale */
+    backdrop-filter: blur(8px); /* Sfocatura leggermente ridotta per far vedere meglio i contorni delle foto */
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Bordo delicato */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Movimento morbidissimo */
+}
+
+.public-card h3 {
+    color: var(--colore-primario);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9); /* Effetto alone per leggere sempre la scritta */
+    transition: all 0.3s ease;
+}
+
+/* Quando ci passi sopra col mouse, la mattonella si "accende" e sale */
+.public-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.9); /* Diventa bianca e solida per farsi cliccare */
+    box-shadow: 0 15px 35px rgba(0, 86, 179, 0.2);
+}
+
+.public-card:hover {
+    transform: translateY(-10px);
+    background: var(--bianco-puro);
+    box-shadow: 0 15px 35px rgba(0, 86, 179, 0.2);
+}
+
+/* --- MENU AD HAMBURGER --- */
+.top-nav {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    z-index: 100;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 12px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.menu-icon span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--colore-primario);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav-links {
+    display: none; /* Nascosto di default */
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: white;
+    list-style: none;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    min-width: 200px;
+}
+
+.nav-links.active {
+    display: block; /* Mostrato quando cliccato */
+}
+
+.nav-links li { margin-bottom: 15px; }
+.nav-links li:last-child { margin-bottom: 0; }
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.private-link { color: #d93025 !important; }
+
+
+/* --- ANIMAZIONE "X" DEL MENU HAMBURGER --- */
+/* Assicuriamoci che le lineette abbiano un movimento fluido */
+
+.menu-icon span {
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Effetto "molla" elastico */
+}
+
+/* Quando il menu è aperto (classe .open aggiunta da JS) */
+.menu-icon.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: #d93025; /* Cambia colore in rosso "chiudi" */
+}
+
+.menu-icon.open span:nth-child(2) {
+    opacity: 0; /* La linea centrale sparisce */
+    transform: scale(0); /* Si rimpicciolisce scomparendo */
+}
+
+.menu-icon.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: #d93025; /* Cambia colore in rosso "chiudi" */
+}
+
+
+/* =========================================
+   10. STILE SEZIONI CONTENUTO (One-Page Layout)
+   ========================================= */
+
+/* Trucco magico: fa scorrere la pagina dolcemente quando clicchi sui link # */
+html {
+    scroll-behavior: smooth;
+    /* Aggiunge un margine in alto quando scorriamo, così il titolo non viene coperto */
+    scroll-padding-top: 120px; 
+}
+
+/* Contenitore generale di tutte le stanze sotto l'Hero */
+.content-sections-container {
+    background-color: var(--bianco-puro); /* Sfondo bianco solido per la lettura */
+    position: relative;
+    z-index: 5; /* Sopra le foto di sfondo ma sotto il menu */
+    box-shadow: 0 -20px 40px rgba(0,0,0,0.05); /* Ombra delicata verso l'alto per staccare dall'Hero */
+}
+
+/* Stile base di ogni singola "stanza" (Coro, FFB, Santuario) */
+.info-section {
+    display: flex;
+    align-items: center; /* Centra verticalmente testo e immagine */
+    justify-content: center;
+    padding: 100px 50px; /* Grande spazio verticale per dare respiro */
+    gap: 80px; /* Spazio tra il blocco di testo e l'immagine */
+    max-width: 1400px; /* Larghezza massima per non disperdere il testo su monitor giganti */
+    margin: 0 auto; /* Centra la stanza sulla pagina */
+}
+
+/* --- Alternanza Sfondi --- */
+/* La stanza FFB (centrale) avrà uno sfondo grigio chiarissimo per spezzare il ritmo */
+.info-section.bg-grigio {
+    background-color: #f7f9fc; /* Un grigio-azzurro etereo e pulito */
+    /* Trucco per far estendere il colore su tutta la larghezza dello schermo */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    /* Ripristiniamo l'allineamento del contenuto interno */
+    padding-left: calc(50vw - 700px + 50px);
+    padding-right: calc(50vw - 700px + 50px);
+}
+
+/* --- Allineamento Testo e Immagine --- */
+.testo-sezione {
+    flex: 1; /* Prende metà dello spazio disponibile */
+    max-width: 600px;
+}
+
+.immagine-sezione {
+    flex: 1; /* Prende l'altra metà dello spazio disponibile */
+    height: 450px; /* Altezza fissa per le immagini per ordine visivo */
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px; /* Angoli smussati come le mattonelle */
+    box-shadow: var(--ombra-morbida); /* Stessa ombra delicata dei pulsanti */
+    border: 5px solid white; /* Cornice bianca elegante */
+}
+
+/* --- Tipografia delle Stanze --- */
+.testo-sezione h2 {
+    font-size: 2.8rem; /* Titolo grande e importante */
+    color: var(--colore-primario);
+    margin-bottom: 25px;
+    font-weight: 700;
+    position: relative;
+}
+
+/* Piccola linea decorativa sotto il titolo h2 */
+.testo-sezione h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #d93025; /* Rosso accento (come la X del menu) */
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.testo-sezione p {
+    font-size: 1.15rem; /* Testo leggibile e arioso */
+    line-height: 1.8; /* Interlinea ampia per non affaticare la vista */
+    color: #444; /* Un grigio molto scuro, meno aggressivo del nero puro */
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   11. RESPONSIVE DESIGN (Adattamento Mobile)
+   ========================================= */
+/* Quando lo schermo è più piccolo di 1024px (Tablet e Cellulari) */
+@media (max-width: 1024px) {
+    .info-section {
+        flex-direction: column; /* Impila testo e immagine uno sotto l'altro */
+        padding: 60px 20px;
+        gap: 40px;
+        text-align: center; /* Centra il testo */
+    }
+
+    /* Su mobile, l'immagine deve venire SEMPRE dopo il testo, indipendentemente dall'ordine HTML */
+    .info-section { flex-direction: column; }
+    
+    /* Forza l'immagine a venire dopo il testo */
+    .immagine-sezione { order: 2; }
+    .testo-sezione { order: 1; }
+
+    /* Nella stanza FFB (dove avevamo invertito l'ordine nell'HTML), forziamo l'ordine mobile */
+    #sezione-ffb { flex-direction: column !important; }
+    #sezione-ffb .immagine-sezione { order: 2 !important; }
+    #sezione-ffb .testo-sezione { order: 1 !important; }
+
+    .testo-sezione h2 { font-size: 2.2rem; }
+    .testo-sezione h2::after { margin: 10px auto 0; } /* Centra la linea decorativa */
+
+    .immagine-sezione {
+        width: 100%; /* L'immagine prende tutta la larghezza */
+        height: 300px; /* Altezza ridotta su mobile */
+        max-width: 500px; /* Ma non esagerare */
+    }
+
+    /* Aggiustiamo il padding della stanza grigia centrale su mobile */
+    .info-section.bg-grigio {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
