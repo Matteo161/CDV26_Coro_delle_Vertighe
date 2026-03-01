@@ -1,3 +1,29 @@
+<?php
+session_start(); // Inizia a ricordare chi è l'utente
+
+// Definiamo le credenziali (come hai chiesto tu)
+$username_coro = "corista";
+$password_coro = "ADV2026";
+
+// Logica per il Logout (se vuoi uscire)
+if (isset($_GET['action']) && $_GET['action'] == 'logout') {
+    session_destroy();
+    header("Location: index.php");
+    exit;
+}
+
+// Logica per il Login
+$errore = "";
+if (isset($_POST['login'])) {
+    if ($_POST['username'] == $username_coro && $_POST['password'] == $password_coro) {
+        $_SESSION['autorizzato'] = true;
+    } else {
+        $errore = "Credenziali errate, riprova.";
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
