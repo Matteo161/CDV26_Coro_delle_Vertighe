@@ -2,11 +2,39 @@
    CORO DELLE VERTIGHE - SCRIPT PRINCIPALE
    ========================================= */
 
-// --- 1. SELEZIONE ELEMENTI DOM ---
+// --- 1. SELEZIONE ELEMENTI DOM E CARICAMENTO FOTO ---
 const searchInput = document.getElementById('main-search');
 const body = document.body;
 const resultsContainer = document.getElementById('results-container');
+const bgContainer = document.getElementById('bg-container');
+
+
+// LA TUA LISTA DELLA SPESA DELLE FOTO (Aggiungi o togli qui in futuro)
+const fotoSfondo = [
+    "assets/img/santuario_esterno_2025.jpg",
+    "assets/img/madonna_vertighe_abside.jpg",
+    "assets/img/vertighe_santuario_nico_organo_2021.jpeg",
+    "assets/img/santuario_vertighe_chianine.jpg",
+    "assets/img/santuario_chiostro_interno.jpg",
+    "assets/img/valdichiana_tramonto.jpg"
+];
+
+
+// Inietta i DIV delle foto nell'HTML
+fotoSfondo.forEach((foto, index) => {
+    const slide = document.createElement('div');
+    // La prima foto riceve subito la classe 'active'
+    slide.className = index === 0 ? 'slide active' : 'slide';
+    slide.style.backgroundImage = `url('${foto}')`;
+    // Inserisce la foto prima dell'overlay-light
+    bgContainer.insertBefore(slide, bgContainer.querySelector('.overlay-light'));
+});
+
+// Ora che le foto sono nell'HTML, diciamo al JS di "catturarle"
 const slides = document.querySelectorAll('.slide');
+
+
+
 
 // --- 2. MOTORE DI RICERCA E CREAZIONE CARD ---
 searchInput.addEventListener('input', (e) => {
@@ -112,18 +140,23 @@ window.addEventListener('scroll', () => {
     }
 });
 
+
+
 // --- 4. SLIDER FOTO AUTOMATICO (Sfondo animato) ---
+
 let currentSlide = 0;
-const slideInterval = 6000; // Cambia foto ogni 6 secondi
+const slideInterval = 8000; // Ti consiglio 8 secondi per goderti il paesaggio!
 
 function nextSlide() {
-    // Controllo di sicurezza: esegue solo se ci sono foto nell'HTML
-    if (slides.length > 0) {
-        slides[currentSlide].classList.remove('active'); // Nasconde la foto attuale
-        currentSlide = (currentSlide + 1) % slides.length; // Calcola la prossima
-        slides[currentSlide].classList.add('active'); // Mostra la nuova foto
+    if (slides.length > 1) { // Gira solo se ci sono almeno 2 foto
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
     }
 }
-
-// Avvia il "motore" del carosello
 setInterval(nextSlide, slideInterval);
+
+
+
+
+

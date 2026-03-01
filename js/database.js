@@ -1,6 +1,6 @@
 /* =========================================
    CORO DELLE VERTIGHE - DATABASE REPERTORIO
-   Ultimo aggiornamento: 2026
+   Ultimo aggiornamento: 2026 - Web Safe Formatted
    ========================================= */
 
 const repertorio = [
@@ -12,14 +12,13 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv001", "christus vincit", "gregoriano", "ingresso"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV001_Christus_vincit.pdf",
-        // ESEMPIO DI COME INSERIRE GLI ALTRI MATERIALI:
-        // "pdf_organo": "assets/pdf/CDV001_Christus_vincit_organo.pdf",
-        // "audio_tutti": "assets/audio/CDV001_tutti.mp3",
-        // "audio_s": "assets/audio/CDV001_soprani.mp3",
-        // "audio_c": "assets/audio/CDV001_contralti.mp3",
-        // "audio_t": "assets/audio/CDV001_tenori.mp3",
-        // "audio_b": "assets/audio/CDV001_bassi.mp3"
+      "pdf_coro": "assets/pdf/cdv001_christus_vincit.pdf",
+      // "pdf_organo": "assets/pdf/cdv001_christus_vincit_organo.pdf",
+      // "audio_tutti": "assets/audio/cdv001_christus_vincit_tutti.mp3",
+      // "audio_s": "assets/audio/cdv001_christus_vincit_soprani.mp3",
+      // "audio_c": "assets/audio/cdv001_christus_vincit_contralti.mp3",
+      // "audio_t": "assets/audio/cdv001_christus_vincit_tenori.mp3",
+      // "audio_b": "assets/audio/cdv001_christus_vincit_bassi.mp3"
     }
   },
   {
@@ -30,7 +29,7 @@ const repertorio = [
     "tempo": "Avvento",
     "tags": ["cdv002", "maria porta dell'avvento", "cdv", "canto mariano", "avvento"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV002_Maria_porta_dell_Avvento.pdf"
+      "pdf_coro": "assets/pdf/cdv002_maria_porta_dellavvento_coro.pdf"
     }
   },
   {
@@ -41,7 +40,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv003", "ave maria", "perosi", "canto mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV003_Ave_Maria.pdf"
+      "pdf_coro": "assets/pdf/cdv003_ave_maria_coro.pdf"
     }
   },
   {
@@ -52,7 +51,7 @@ const repertorio = [
     "tempo": "Natale",
     "tags": ["cdv004", "non temete popoli del mondo", "cdv", "ingresso", "natale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV004_Non_temete_popoli_del_mondo.pdf"
+      "pdf_coro": "assets/pdf/cdv004_non_temete_popoli_del_mondo_coro.pdf"
     }
   },
   {
@@ -63,7 +62,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv005", "gloria", "lourdes 2019", "gloria", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV005_Gloria.pdf"
+      "pdf_coro": "assets/pdf/cdv005_gloria_coro.pdf"
     }
   },
   {
@@ -74,7 +73,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv006", "sanctus", "lourdes 2019", "santo", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV006_Sanctus.pdf"
+      "pdf_coro": "assets/pdf/cdv006_sanctus_coro.pdf"
     }
   },
   {
@@ -85,7 +84,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv007", "agnus dei", "lourdes 2019", "agnello di dio", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV007_Agnus_Dei.pdf"
+      "pdf_coro": "assets/pdf/cdv007_agnus_dei_coro.pdf"
     }
   },
   {
@@ -96,7 +95,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv008", "kyrie", "lourdes 2019", "kyrie", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV008_Kyrie.pdf"
+      "pdf_coro": "assets/pdf/cdv008_kyrie_coro.pdf"
     }
   },
   {
@@ -107,7 +106,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv009", "salve dolce vergine", "frisina", "ingresso, canto mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV009_Salve_dolce_vergine.pdf"
+      "pdf_coro": "assets/pdf/cdv009_salve_dolce_vergine_coro.pdf"
     }
   },
   {
@@ -118,7 +117,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv010", "vergine madre", "cdv", "canto mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV010_Vergine_madre.pdf"
+      "pdf_coro": "assets/pdf/cdv010_vergine_madre_coro.pdf"
     }
   },
   {
@@ -129,7 +128,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv011", "benedetto sei tu signore", "cdv", "offertorio"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV011_Benedetto_sei_Tu_Signore.pdf"
+      "pdf_coro": "assets/pdf/cdv011_benedetto_sei_tu_signore_coro.pdf"
     }
   },
   {
@@ -140,7 +139,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv012", "andrò a vederla un dì", "cdv", "canto mariano, finale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV012_Andrò_a_vederla_un_dì.pdf"
+      "pdf_coro": "assets/pdf/cdv012_andro_a_vederla_un_di_coro.pdf"
     }
   },
   {
@@ -151,7 +150,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv013", "santa chiesa di dio", "cdv", "ingresso"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV013_Santa_Chiesa_di_Dio.pdf"
+      "pdf_coro": "assets/pdf/cdv013_santa_chiesa_di_dio_coro.pdf"
     }
   },
   {
@@ -162,7 +161,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv014", "symbolum '77", "cdv", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV014_Symbolum__77.pdf"
+      "pdf_coro": "assets/pdf/cdv014_symbolum_77_coro.pdf"
     }
   },
   {
@@ -173,7 +172,7 @@ const repertorio = [
     "tempo": "Natale",
     "tags": ["cdv015", "quel dio", "cdv", "comunione", "natale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV015_Quel_Dio.pdf"
+      "pdf_coro": "assets/pdf/cdv015_quel_dio_coro.pdf"
     }
   },
   {
@@ -184,7 +183,7 @@ const repertorio = [
     "tempo": "Natale",
     "tags": ["cdv016", "oggi è nato per noi", "cdv", "salmo", "natale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV016_Oggi_è_nato_per_noi.pdf"
+      "pdf_coro": "assets/pdf/cdv016_oggi_e_nato_per_noi_coro.pdf"
     }
   },
   {
@@ -195,7 +194,7 @@ const repertorio = [
     "tempo": "Natale",
     "tags": ["cdv017", "o salvatore del mondo", "cdv", "comunione", "natale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV017_O_Salvatore_del_mondo.pdf"
+      "pdf_coro": "assets/pdf/cdv017_o_salvatore_del_mondo_coro.pdf"
     }
   },
   {
@@ -206,7 +205,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv018", "anamnesi", "cdv", "mistero della fede"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV018_Anamnesi.pdf"
+      "pdf_coro": "assets/pdf/cdv018_anamnesi_coro.pdf"
     }
   },
   {
@@ -217,7 +216,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv019", "siyahamba", "cdv", "finale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV019_Siyahamba.pdf"
+      "pdf_coro": "assets/pdf/cdv019_siyahamba_coro.pdf"
     }
   },
   {
@@ -228,7 +227,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv020", "madre fiducia nostra", "cdv", "canto mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV020_Madre_fiducia_nostra.pdf"
+      "pdf_coro": "assets/pdf/cdv020_madre_fiducia_nostra_coro.pdf"
     }
   },
   {
@@ -239,7 +238,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv021", "agnus dei", "gregoriano", "agnello di dio", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV021_Agnus_Dei.pdf"
+      "pdf_coro": "assets/pdf/cdv021_agnus_dei_coro.pdf"
     }
   },
   {
@@ -250,7 +249,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv022", "sanctus", "gregoriano", "santo", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV022_Sanctus.pdf"
+      "pdf_coro": "assets/pdf/cdv022_sanctus_coro.pdf"
     }
   },
   {
@@ -261,7 +260,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv023", "kyrie", "gregoriano", "kyrie", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV023_Kyrie.pdf"
+      "pdf_coro": "assets/pdf/cdv023_kyrie_coro.pdf"
     }
   },
   {
@@ -272,7 +271,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv024", "dio s'è fatto come noi", "versione vecchia", "natale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV024_Dio_s_è_fatto_come_noi.pdf"
+      "pdf_coro": "assets/pdf/cdv024_dio_se_fatto_come_noi_coro.pdf"
     }
   },
   {
@@ -283,7 +282,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv025", "innalzate i cieli lo sguardo", "cdv", "avvento"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV025_Innalzate_i_cieli_lo_sguardo.pdf"
+      "pdf_coro": "assets/pdf/cdv025_innalzate_i_cieli_lo_sguardo_coro.pdf"
     }
   },
   {
@@ -294,7 +293,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv026", "tu quando verrai", "cdv", "avvento"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV026_Tu_quando_verrai.pdf"
+      "pdf_coro": "assets/pdf/cdv026_tu_quando_verrai_coro.pdf"
     }
   },
   {
@@ -305,7 +304,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv027", "astro del ciel", "cdv", "natale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV027_Astro_del_ciel.pdf"
+      "pdf_coro": "assets/pdf/cdv027_astro_del_ciel_coro.pdf"
     }
   },
   {
@@ -316,7 +315,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv028", "in notte placida", "cdv", "natale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV028_In_notte_placida.pdf"
+      "pdf_coro": "assets/pdf/cdv028_in_notte_placida_coro.pdf"
     }
   },
   {
@@ -327,7 +326,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv029", "tu scendi dalle stelle", "cdv", "natale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV029_Tu_scendi_dalle_stelle.pdf"
+      "pdf_coro": "assets/pdf/cdv029_tu_scendi_dalle_stelle_coro.pdf"
     }
   },
   {
@@ -338,7 +337,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv030", "venite fedeli", "cdv", "natale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV030_Venite_fedeli.pdf"
+      "pdf_coro": "assets/pdf/cdv030_venite_fedeli_coro.pdf"
     }
   },
   {
@@ -349,7 +348,7 @@ const repertorio = [
     "tempo": "Natale",
     "tags": ["cdv031", "nella notte tutta luce", "cdv", "natale", "natale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV031_Nella_notte_tutta_luce.pdf"
+      "pdf_coro": "assets/pdf/cdv031_nella_notte_tutta_luce_coro.pdf"
     }
   },
   {
@@ -360,7 +359,7 @@ const repertorio = [
     "tempo": "Epifania",
     "tags": ["cdv032", "salmo epifania", "cdv", "salmo", "epifania"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV032_Salmo_Epifania.pdf"
+      "pdf_coro": "assets/pdf/cdv032_salmo_epifania_coro.pdf"
     }
   },
   {
@@ -371,7 +370,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv033", "l'acqua viva", "cdv", "aspersione", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV033_L_acqua_viva.pdf"
+      "pdf_coro": "assets/pdf/cdv033_lacqua_viva_coro.pdf"
     }
   },
   {
@@ -382,7 +381,7 @@ const repertorio = [
     "tempo": "Quaresima",
     "tags": ["cdv034", "stabat mater", "perosi", "quaresima", "quaresima"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV034_Stabat_Mater.pdf"
+      "pdf_coro": "assets/pdf/cdv034_stabat_mater_coro.pdf"
     }
   },
   {
@@ -393,7 +392,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv035", "pane di vita", "cdv", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV035_Pane_di_vita.pdf"
+      "pdf_coro": "assets/pdf/cdv035_pane_di_vita_coro.pdf"
     }
   },
   {
@@ -404,7 +403,7 @@ const repertorio = [
     "tempo": "Quaresima",
     "tags": ["cdv036", "miserere", "cdv", "penitenziale", "quaresima"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV036_Miserere.pdf"
+      "pdf_coro": "assets/pdf/cdv036_miserere_coro.pdf"
     }
   },
   {
@@ -415,7 +414,7 @@ const repertorio = [
     "tempo": "Quaresima",
     "tags": ["cdv037", "signore dolce volto", "cdv", "quaresima", "quaresima"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV037_Signore_dolce_volto.pdf"
+      "pdf_coro": "assets/pdf/cdv037_signore_dolce_volto_coro.pdf"
     }
   },
   {
@@ -426,7 +425,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv038", "chi mi seguirà", "cdv", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV038_Chi_mi_seguirà.pdf"
+      "pdf_coro": "assets/pdf/cdv038_chi_mi_seguira_coro.pdf"
     }
   },
   {
@@ -437,7 +436,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv039", "come incenso", "cdv", "offertorio"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV039_Come_incenso.pdf"
+      "pdf_coro": "assets/pdf/cdv039_come_incenso_coro.pdf"
     }
   },
   {
@@ -448,7 +447,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv040", "questo è il giorno", "cdv", "salmo", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV040_Questo_è_il_giorno.pdf"
+      "pdf_coro": "assets/pdf/cdv040_questo_e_il_giorno_coro.pdf"
     }
   },
   {
@@ -459,7 +458,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv041", "ecco l'acqua", "cdv", "aspersione", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV041_Ecco_l_acqua.pdf"
+      "pdf_coro": "assets/pdf/cdv041_ecco_lacqua_coro.pdf"
     }
   },
   {
@@ -470,7 +469,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv042", "cristo nostra pasqua", "cdv", "comunione", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV042_Cristo_nostra_Pasqua.pdf"
+      "pdf_coro": "assets/pdf/cdv042_cristo_nostra_pasqua_coro.pdf"
     }
   },
   {
@@ -481,7 +480,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv043", "alleluia celebrate il signore", "parisi", "alleluia", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV043_Alleluia_celebrate_il_Signore.pdf"
+      "pdf_coro": "assets/pdf/cdv043_alleluia_celebrate_il_signore_coro.pdf"
     }
   },
   {
@@ -492,7 +491,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv044", "santo il signore", "parisi", "santo", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV044_Santo_il_Signore.pdf"
+      "pdf_coro": "assets/pdf/cdv044_santo_il_signore_coro.pdf"
     }
   },
   {
@@ -503,7 +502,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv045", "agnello di dio", "parisi", "agnello di dio", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV045_Agnello_di_Dio.pdf"
+      "pdf_coro": "assets/pdf/cdv045_agnello_di_dio_coro.pdf"
     }
   },
   {
@@ -514,7 +513,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv046", "sull'altare del mondo", "cdv", "offertorio"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV046_Sull_altare_del_mondo.pdf"
+      "pdf_coro": "assets/pdf/cdv046_sullaltare_del_mondo_coro.pdf"
     }
   },
   {
@@ -525,7 +524,7 @@ const repertorio = [
     "tempo": "Quaresima",
     "tags": ["cdv047", "salmo 1 domenica", "quaresima anno b", "salmo", "quaresima"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV047_Salmo_1_Domenica.pdf"
+      "pdf_coro": "assets/pdf/cdv047_salmo_1_domenica_coro.pdf"
     }
   },
   {
@@ -536,7 +535,7 @@ const repertorio = [
     "tempo": "Quaresima",
     "tags": ["cdv048", "salmo 2 domenica", "quaresima anno b", "salmo", "quaresima"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV048_Salmo_2_Domenica.pdf"
+      "pdf_coro": "assets/pdf/cdv048_salmo_2_domenica_coro.pdf"
     }
   },
   {
@@ -547,7 +546,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv049", "gloria", "lécot", "gloria", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV049_Gloria.pdf"
+      "pdf_coro": "assets/pdf/cdv049_gloria_coro.pdf"
     }
   },
   {
@@ -558,7 +557,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv050", "regina coeli", "gregoriano", "mariano", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV050_Regina_Coeli.pdf"
+      "pdf_coro": "assets/pdf/cdv050_regina_coeli_coro.pdf"
     }
   },
   {
@@ -569,7 +568,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv051", "regina coeli", "cervi", "mariano", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV051_Regina_Coeli.pdf"
+      "pdf_coro": "assets/pdf/cdv051_regina_coeli_coro.pdf"
     }
   },
   {
@@ -580,7 +579,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv052", "conoscere te", "cdv", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV052_Conoscere_Te.pdf"
+      "pdf_coro": "assets/pdf/cdv052_conoscere_te_coro.pdf"
     }
   },
   {
@@ -591,7 +590,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv053", "santo", "bonfitto", "santo", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV053_Santo.pdf"
+      "pdf_coro": "assets/pdf/cdv053_santo_coro.pdf"
     }
   },
   {
@@ -602,7 +601,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv054", "padre nostro", "gregoriano (vecchia)", "padre nostro", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV054_Padre_Nostro.pdf"
+      "pdf_coro": "assets/pdf/cdv054_padre_nostro_coro.pdf"
     }
   },
   {
@@ -613,7 +612,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv055", "altissima luce", "cdv", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV055_Altissima_luce.pdf"
+      "pdf_coro": "assets/pdf/cdv055_altissima_luce_coro.pdf"
     }
   },
   {
@@ -624,7 +623,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv056", "ave maria di lourdes", "cdv", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV056_Ave_Maria_di_Lourdes.pdf"
+      "pdf_coro": "assets/pdf/cdv056_ave_maria_di_lourdes_coro.pdf"
     }
   },
   {
@@ -635,7 +634,7 @@ const repertorio = [
     "tempo": "Solennita",
     "tags": ["cdv057", "salmi e versetti", "assunta", "salmo", "solennita"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV057_Salmi_e_versetti.pdf"
+      "pdf_coro": "assets/pdf/cdv057_salmi_e_versetti_coro.pdf"
     }
   },
   {
@@ -646,7 +645,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv058", "accogli signore i nostri doni", "cdv", "offertorio"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV058_Accogli_Signore_i_nostri_doni.pdf"
+      "pdf_coro": "assets/pdf/cdv058_accogli_signore_i_nostri_doni_coro.pdf"
     }
   },
   {
@@ -657,7 +656,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv059", "madre io vorrei", "cdv", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV059_Madre_io_vorrei.pdf"
+      "pdf_coro": "assets/pdf/cdv059_madre_io_vorrei_coro.pdf"
     }
   },
   {
@@ -668,7 +667,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv060", "cantico delle creature", "cdv", "ringraziamento"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV060_Cantico_delle_creature.pdf"
+      "pdf_coro": "assets/pdf/cdv060_cantico_delle_creature_coro.pdf"
     }
   },
   {
@@ -679,7 +678,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv061", "alleluia ed oggi ancora", "sequeri", "alleluia", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV061_Alleluia_ed_oggi_ancora.pdf"
+      "pdf_coro": "assets/pdf/cdv061_alleluia_ed_oggi_ancora_coro.pdf"
     }
   },
   {
@@ -690,7 +689,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv062", "il signore è il mio pastore", "cdv", "salmo"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV062_Il_Signore_è_il_mio_pastore.pdf"
+      "pdf_coro": "assets/pdf/cdv062_il_signore_e_il_mio_pastore_coro.pdf"
     }
   },
   {
@@ -701,7 +700,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv063", "agnello di dio", "picchi", "agnello di dio", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV063_Agnello_di_Dio.pdf"
+      "pdf_coro": "assets/pdf/cdv063_agnello_di_dio_coro.pdf"
     }
   },
   {
@@ -712,7 +711,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv064", "alleluia canto per cristo", "cdv", "alleluia", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV064_Alleluia_canto_per_Cristo.pdf"
+      "pdf_coro": "assets/pdf/cdv064_alleluia_canto_per_cristo_coro.pdf"
     }
   },
   {
@@ -723,7 +722,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv065", "noi canteremo gloria a te", "cdv", "ingresso"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV065_Noi_canteremo_gloria_a_te.pdf"
+      "pdf_coro": "assets/pdf/cdv065_noi_canteremo_gloria_a_te_coro.pdf"
     }
   },
   {
@@ -734,7 +733,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv066", "gloria", "versetto", "gloria", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV066_Gloria.pdf"
+      "pdf_coro": "assets/pdf/cdv066_gloria_coro.pdf"
     }
   },
   {
@@ -745,7 +744,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv067", "alleluia", "gregoriano", "alleluia", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV067_Alleluia.pdf"
+      "pdf_coro": "assets/pdf/cdv067_alleluia_coro.pdf"
     }
   },
   {
@@ -756,7 +755,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv068", "pane e vino ti offriamo", "cdv", "offertorio"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV068_Pane_e_vino_ti_offriamo.pdf"
+      "pdf_coro": "assets/pdf/cdv068_pane_e_vino_ti_offriamo_coro.pdf"
     }
   },
   {
@@ -767,7 +766,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv069", "dell'aurora tu sorgi più bella", "cdv", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV069_Dell_aurora_tu_sorgi_più_bella.pdf"
+      "pdf_coro": "assets/pdf/cdv069_dellaurora_tu_sorgi_piu_bella_coro.pdf"
     }
   },
   {
@@ -778,7 +777,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv070", "agnello di dio", "augustoni", "agnello di dio", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV070_Agnello_di_Dio.pdf"
+      "pdf_coro": "assets/pdf/cdv070_agnello_di_dio_coro.pdf"
     }
   },
   {
@@ -789,7 +788,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv071", "santo", "rossi", "santo", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV071_Santo.pdf"
+      "pdf_coro": "assets/pdf/cdv071_santo_coro.pdf"
     }
   },
   {
@@ -800,7 +799,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv072", "padre nostro", "gregoriano (nuovo)", "padre nostro", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV072_Padre_Nostro.pdf"
+      "pdf_coro": "assets/pdf/cdv072_padre_nostro_coro.pdf"
     }
   },
   {
@@ -811,7 +810,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv073", "amen dossologico", "cdv", "dossologia", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV073_Amen_dossologico.pdf"
+      "pdf_coro": "assets/pdf/cdv073_amen_dossologico_coro.pdf"
     }
   },
   {
@@ -822,7 +821,7 @@ const repertorio = [
     "tempo": "Quaresima",
     "tags": ["cdv074", "salmi", "quaresima anno b", "salmo", "quaresima"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV074_Salmi.pdf"
+      "pdf_coro": "assets/pdf/cdv074_salmi_coro.pdf"
     }
   },
   {
@@ -833,7 +832,7 @@ const repertorio = [
     "tempo": "Quaresima",
     "tags": ["cdv075", "miserere", "rou rui", "penitenziale", "quaresima"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV075_Miserere.pdf"
+      "pdf_coro": "assets/pdf/cdv075_miserere_coro.pdf"
     }
   },
   {
@@ -844,7 +843,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv076", "il pane del cammino", "cdv", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV076_Il_pane_del_cammino.pdf"
+      "pdf_coro": "assets/pdf/cdv076_il_pane_del_cammino_coro.pdf"
     }
   },
   {
@@ -855,7 +854,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv077", "sorgente di salvezza", "cdv", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV077_Sorgente_di_salvezza.pdf"
+      "pdf_coro": "assets/pdf/cdv077_sorgente_di_salvezza_coro.pdf"
     }
   },
   {
@@ -866,7 +865,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv078", "regina coeli", "d. pietro chiesa", "mariano", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV078_Regina_Coeli.pdf"
+      "pdf_coro": "assets/pdf/cdv078_regina_coeli_coro.pdf"
     }
   },
   {
@@ -877,7 +876,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv079", "salmo", "pasqua", "salmo", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV079_Salmo.pdf"
+      "pdf_coro": "assets/pdf/cdv079_salmo_coro.pdf"
     }
   },
   {
@@ -888,7 +887,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv080", "regina coeli", "gregoriano", "mariano", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV080_Regina_Coeli.pdf"
+      "pdf_coro": "assets/pdf/cdv080_regina_coeli_coro.pdf"
     }
   },
   {
@@ -899,7 +898,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv081", "victimae paschali", "cdv", "sequenza", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV081_Victimae_Paschali.pdf"
+      "pdf_coro": "assets/pdf/cdv081_victimae_paschali_coro.pdf"
     }
   },
   {
@@ -910,7 +909,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv082", "salmo", "pasqua anno b", "salmo", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV082_Salmo.pdf"
+      "pdf_coro": "assets/pdf/cdv082_salmo_coro.pdf"
     }
   },
   {
@@ -921,7 +920,7 @@ const repertorio = [
     "tempo": "Palme",
     "tags": ["cdv083", "osanna al figlio di david", "cdv", "ingresso", "palme"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV083_Osanna_al_Figlio_di_David.pdf"
+      "pdf_coro": "assets/pdf/cdv083_osanna_al_figlio_di_david_coro.pdf"
     }
   },
   {
@@ -932,7 +931,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv084", "madre delle vertighe", "cdv", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV084_Madre_delle_Vertighe.pdf"
+      "pdf_coro": "assets/pdf/cdv084_madre_delle_vertighe_coro.pdf"
     }
   },
   {
@@ -943,7 +942,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv085", "ascendit deus", "cdv", "ascensione", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV085_Ascendit_Deus.pdf"
+      "pdf_coro": "assets/pdf/cdv085_ascendit_deus_coro.pdf"
     }
   },
   {
@@ -954,7 +953,7 @@ const repertorio = [
     "tempo": "Pentecoste",
     "tags": ["cdv086", "uniti nel cenacolo", "cdv", "comunione", "pentecoste"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV086_Uniti_nel_Cenacolo.pdf"
+      "pdf_coro": "assets/pdf/cdv086_uniti_nel_cenacolo_coro.pdf"
     }
   },
   {
@@ -965,7 +964,7 @@ const repertorio = [
     "tempo": "Pentecoste",
     "tags": ["cdv087", "spirito santo", "cdv", "pentecoste", "pentecoste"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV087_Spirito_Santo.pdf"
+      "pdf_coro": "assets/pdf/cdv087_spirito_santo_coro.pdf"
     }
   },
   {
@@ -976,7 +975,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv088", "io sono il pane vivo", "cdv", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV088_Io_sono_il_pane_vivo.pdf"
+      "pdf_coro": "assets/pdf/cdv088_io_sono_il_pane_vivo_coro.pdf"
     }
   },
   {
@@ -987,7 +986,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv089", "cantiamo te", "cdv", "ingresso"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV089_Cantiamo_Te.pdf"
+      "pdf_coro": "assets/pdf/cdv089_cantiamo_te_coro.pdf"
     }
   },
   {
@@ -998,7 +997,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv090", "salmo", "ss. trinità anno b", "salmo", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV090_Salmo.pdf"
+      "pdf_coro": "assets/pdf/cdv090_salmo_coro.pdf"
     }
   },
   {
@@ -1009,7 +1008,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv091", "missa de angelis", "gregoriano", "ordinario", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV091_Missa_De_Angelis.pdf"
+      "pdf_coro": "assets/pdf/cdv091_missa_de_angelis_coro.pdf"
     }
   },
   {
@@ -1020,7 +1019,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv092", "gloria", "donati", "gloria", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV092_Gloria.pdf"
+      "pdf_coro": "assets/pdf/cdv092_gloria_coro.pdf"
     }
   },
   {
@@ -1031,7 +1030,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv093", "santo", "scapin", "santo", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV093_Santo.pdf"
+      "pdf_coro": "assets/pdf/cdv093_santo_coro.pdf"
     }
   },
   {
@@ -1042,7 +1041,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv094", "alleluia irlandese", "cdv", "alleluia", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV094_Alleluia_Irlandese.pdf"
+      "pdf_coro": "assets/pdf/cdv094_alleluia_irlandese_coro.pdf"
     }
   },
   {
@@ -1053,7 +1052,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv095", "signore delle cime", "de marzi", "congedo"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV095_Signore_delle_cime.pdf"
+      "pdf_coro": "assets/pdf/cdv095_signore_delle_cime_coro.pdf"
     }
   },
   {
@@ -1064,7 +1063,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv096", "maria lassù", "cdv", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV096_Maria_lassù.pdf"
+      "pdf_coro": "assets/pdf/cdv096_maria_lassu_coro.pdf"
     }
   },
   {
@@ -1075,7 +1074,7 @@ const repertorio = [
     "tempo": "Avvento",
     "tags": ["cdv097", "salmi", "avvento anno c", "salmo", "avvento"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV097_Salmi.pdf"
+      "pdf_coro": "assets/pdf/cdv097_salmi_coro.pdf"
     }
   },
   {
@@ -1086,7 +1085,7 @@ const repertorio = [
     "tempo": "Natale",
     "tags": ["cdv098", "dio s'è fatto come noi", "versione nuova", "natale", "natale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV098_Dio_s_è_fatto_come_noi.pdf"
+      "pdf_coro": "assets/pdf/cdv098_dio_se_fatto_come_noi_coro.pdf"
     }
   },
   {
@@ -1097,7 +1096,7 @@ const repertorio = [
     "tempo": "Avvento",
     "tags": ["cdv099", "vieni tra noi", "cdv", "avvento", "avvento"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV099_Vieni_tra_noi.pdf"
+      "pdf_coro": "assets/pdf/cdv099_vieni_tra_noi_coro.pdf"
     }
   },
   {
@@ -1108,7 +1107,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv100", "eccomi", "frisina", "vocazionale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV100_Eccomi.pdf"
+      "pdf_coro": "assets/pdf/cdv100_eccomi_coro.pdf"
     }
   },
   {
@@ -1119,7 +1118,7 @@ const repertorio = [
     "tempo": "Quaresima",
     "tags": ["cdv101", "acclamazioni di quaresima", "cdv", "acclamazione", "quaresima"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV101_Acclamazioni_di_Quaresima.pdf"
+      "pdf_coro": "assets/pdf/cdv101_acclamazioni_di_quaresima_coro.pdf"
     }
   },
   {
@@ -1130,7 +1129,7 @@ const repertorio = [
     "tempo": "Quaresima",
     "tags": ["cdv102", "salmi", "quaresima anno c", "salmo", "quaresima"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV102_Salmi.pdf"
+      "pdf_coro": "assets/pdf/cdv102_salmi_coro.pdf"
     }
   },
   {
@@ -1141,7 +1140,7 @@ const repertorio = [
     "tempo": "Quaresima",
     "tags": ["cdv103", "atto penitenziale", "paniccia", "penitenziale", "quaresima"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV103_Atto_penitenziale.pdf"
+      "pdf_coro": "assets/pdf/cdv103_atto_penitenziale_coro.pdf"
     }
   },
   {
@@ -1152,7 +1151,7 @@ const repertorio = [
     "tempo": "Quaresima",
     "tags": ["cdv104", "per la croce", "rossi", "venerazione", "quaresima"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV104_Per_la_croce.pdf"
+      "pdf_coro": "assets/pdf/cdv104_per_la_croce_coro.pdf"
     }
   },
   {
@@ -1163,7 +1162,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv105", "gloria", "parisi", "gloria", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV105_Gloria.pdf"
+      "pdf_coro": "assets/pdf/cdv105_gloria_coro.pdf"
     }
   },
   {
@@ -1174,7 +1173,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv106", "segno di unità", "parisi", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV106_Segno_di_unità.pdf"
+      "pdf_coro": "assets/pdf/cdv106_segno_di_unita_coro.pdf"
     }
   },
   {
@@ -1185,7 +1184,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv107", "salmo divina misericordia", "cdv", "salmo", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV107_Salmo_Divina_Misericordia.pdf"
+      "pdf_coro": "assets/pdf/cdv107_salmo_divina_misericordia_coro.pdf"
     }
   },
   {
@@ -1196,7 +1195,7 @@ const repertorio = [
     "tempo": "Ordinario, Avvento, Natale, Quaresima, Pasqua",
     "tags": ["cdv108_a", "messa semplice santo", "sessantini", "santo", "ordinario, avvento, natale, quaresima, pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV108_Messa_Semplice_Santo.pdf"
+      "pdf_coro": "assets/pdf/cdv108_a_messa_semplice_santo_coro.pdf"
     }
   },
   {
@@ -1207,7 +1206,7 @@ const repertorio = [
     "tempo": "Ordinario, Avvento, Natale, Quaresima, Pasqua",
     "tags": ["cdv108_b", "messa semplice agnello", "sessantini", "agnello di dio", "ordinario, avvento, natale, quaresima, pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV108_Messa_Semplice_Agnello.pdf"
+      "pdf_coro": "assets/pdf/cdv108_b_messa_semplice_agnello_coro.pdf"
     }
   },
   {
@@ -1218,7 +1217,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv109", "alleluia", "palombella", "alleluia", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV109_Alleluia.pdf"
+      "pdf_coro": "assets/pdf/cdv109_alleluia_coro.pdf"
     }
   },
   {
@@ -1229,7 +1228,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv110", "credo in te", "frisina", "credo", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV110_Credo_in_Te.pdf"
+      "pdf_coro": "assets/pdf/cdv110_credo_in_te_coro.pdf"
     }
   },
   {
@@ -1240,7 +1239,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv111", "magnificat et exultavit", "ravelli", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV111_Magnificat_et_exultavit.pdf"
+      "pdf_coro": "assets/pdf/cdv111_magnificat_et_exultavit_coro.pdf"
     }
   },
   {
@@ -1251,7 +1250,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv112", "vergine del silenzio", "machetta", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV112_Vergine_del_Silenzio.pdf"
+      "pdf_coro": "assets/pdf/cdv112_vergine_del_silenzio_coro.pdf"
     }
   },
   {
@@ -1262,7 +1261,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv113", "beatitudini", "galliano", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV113_Beatitudini.pdf"
+      "pdf_coro": "assets/pdf/cdv113_beatitudini_coro.pdf"
     }
   },
   {
@@ -1273,7 +1272,7 @@ const repertorio = [
     "tempo": "Avvento",
     "tags": ["cdv114", "alleluia per l'avvento", "cdv", "alleluia", "avvento"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV114_Alleluia_per_l_Avvento.pdf"
+      "pdf_coro": "assets/pdf/cdv114_alleluia_per_lavvento_coro.pdf"
     }
   },
   {
@@ -1284,7 +1283,7 @@ const repertorio = [
     "tempo": "Avvento",
     "tags": ["cdv115", "salmi", "avvento anno a", "salmo", "avvento"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV115_Salmi.pdf"
+      "pdf_coro": "assets/pdf/cdv115_salmi_coro.pdf"
     }
   },
   {
@@ -1295,7 +1294,7 @@ const repertorio = [
     "tempo": "Natale",
     "tags": ["cdv116", "salmi", "natale anno a", "salmo", "natale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV116_Salmi.pdf"
+      "pdf_coro": "assets/pdf/cdv116_salmi_coro.pdf"
     }
   },
   {
@@ -1306,7 +1305,7 @@ const repertorio = [
     "tempo": "Quaresima",
     "tags": ["cdv117", "salmi", "quaresima anno a", "salmo", "quaresima"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV117_Salmi.pdf"
+      "pdf_coro": "assets/pdf/cdv117_salmi_coro.pdf"
     }
   },
   {
@@ -1317,7 +1316,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv118", "salmi", "pasqua anno a", "salmo", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV118_Salmi.pdf"
+      "pdf_coro": "assets/pdf/cdv118_salmi_coro.pdf"
     }
   },
   {
@@ -1328,7 +1327,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv119", "preghiera a nostro signore", "d. pietro chiesa", "preghiera"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV119_Preghiera_a_Nostro_Signore.pdf"
+      "pdf_coro": "assets/pdf/cdv119_preghiera_a_nostro_signore_coro.pdf"
     }
   },
   {
@@ -1339,7 +1338,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv120", "fior di frumento", "parisi", "offertorio"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV120_Fior_di_frumento.pdf"
+      "pdf_coro": "assets/pdf/cdv120_fior_di_frumento_coro.pdf"
     }
   },
   {
@@ -1350,7 +1349,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv121", "custodiscimi", "trad. ebraico", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV121_Custodiscimi.pdf"
+      "pdf_coro": "assets/pdf/cdv121_custodiscimi_coro.pdf"
     }
   },
   {
@@ -1361,7 +1360,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv122", "come pane nuovo", "meneghello", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV122_Come_pane_nuovo.pdf"
+      "pdf_coro": "assets/pdf/cdv122_come_pane_nuovo_coro.pdf"
     }
   },
   {
@@ -1372,7 +1371,7 @@ const repertorio = [
     "tempo": "Pentecoste",
     "tags": ["cdv123", "del tuo spirito", "gen rosso/verde", "pentecoste", "pentecoste"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV123_Del_Tuo_Spirito.pdf"
+      "pdf_coro": "assets/pdf/cdv123_del_tuo_spirito_coro.pdf"
     }
   },
   {
@@ -1383,7 +1382,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv124", "anima christi", "frisina", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV124_Anima_Christi.pdf"
+      "pdf_coro": "assets/pdf/cdv124_anima_christi_coro.pdf"
     }
   },
   {
@@ -1394,7 +1393,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv125", "nome dolcissimo", "ruggeri", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV125_Nome_dolcissimo.pdf"
+      "pdf_coro": "assets/pdf/cdv125_nome_dolcissimo_coro.pdf"
     }
   },
   {
@@ -1405,7 +1404,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv126", "resta con noi signore", "verardo", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV126_Resta_con_noi_Signore.pdf"
+      "pdf_coro": "assets/pdf/cdv126_resta_con_noi_signore_coro.pdf"
     }
   },
   {
@@ -1416,7 +1415,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv127", "alleluia lourdes 2017", "lécot", "alleluia", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV127_Alleluia_Lourdes_2017.pdf"
+      "pdf_coro": "assets/pdf/cdv127_alleluia_lourdes_2017_coro.pdf"
     }
   },
   {
@@ -1427,7 +1426,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv128", "gloria lourdes 2013", "lécot", "gloria", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV128_Gloria_Lourdes_2013.pdf"
+      "pdf_coro": "assets/pdf/cdv128_gloria_lourdes_2013_coro.pdf"
     }
   },
   {
@@ -1438,7 +1437,7 @@ const repertorio = [
     "tempo": "Natale",
     "tags": ["cdv129", "pastori", "de marzi", "natale", "natale"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV129_Pastori.pdf"
+      "pdf_coro": "assets/pdf/cdv129_pastori_coro.pdf"
     }
   },
   {
@@ -1449,7 +1448,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv130", "salve regina", "cdv", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV130_Salve_Regina.pdf"
+      "pdf_coro": "assets/pdf/cdv130_salve_regina_coro.pdf"
     }
   },
   {
@@ -1460,7 +1459,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv131", "bianca regina fulgida", "coradini", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV131_Bianca_regina_fulgida.pdf"
+      "pdf_coro": "assets/pdf/cdv131_bianca_regina_fulgida_coro.pdf"
     }
   },
   {
@@ -1471,7 +1470,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv132", "lodate dio", "cdv", "lode"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV132_Lodate_Dio.pdf"
+      "pdf_coro": "assets/pdf/cdv132_lodate_dio_coro.pdf"
     }
   },
   {
@@ -1482,7 +1481,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv133", "hai dato un cibo", "cdv", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV133_Hai_dato_un_cibo.pdf"
+      "pdf_coro": "assets/pdf/cdv133_hai_dato_un_cibo_coro.pdf"
     }
   },
   {
@@ -1493,7 +1492,7 @@ const repertorio = [
     "tempo": "Pentecoste",
     "tags": ["cdv134", "discendi santo spirito", "schweitzer", "pentecoste", "pentecoste"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV134_Discendi_santo_spirito.pdf"
+      "pdf_coro": "assets/pdf/cdv134_discendi_santo_spirito_coro.pdf"
     }
   },
   {
@@ -1504,7 +1503,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv135", "fratello sole", "ortolani", "ringraziamento"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV135_Fratello_sole.pdf"
+      "pdf_coro": "assets/pdf/cdv135_fratello_sole_coro.pdf"
     }
   },
   {
@@ -1515,7 +1514,7 @@ const repertorio = [
     "tempo": "Quaresima",
     "tags": ["cdv136", "pietà signore", "frisina", "penitenziale", "quaresima"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV136_Pietà_Signore.pdf"
+      "pdf_coro": "assets/pdf/cdv136_pieta_signore_coro.pdf"
     }
   },
   {
@@ -1526,7 +1525,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv137", "te lodiamo trinità", "bone", "lode"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV137_Te_lodiamo_Trinità.pdf"
+      "pdf_coro": "assets/pdf/cdv137_te_lodiamo_trinita_coro.pdf"
     }
   },
   {
@@ -1537,7 +1536,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv138", "i cieli narrano", "frisina", "offertorio"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV138_I_cieli_narrano.pdf"
+      "pdf_coro": "assets/pdf/cdv138_i_cieli_narrano_coro.pdf"
     }
   },
   {
@@ -1548,7 +1547,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv139", "agnello di dio", "capaccioli", "agnello di dio", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV139_Agnello_di_Dio.pdf"
+      "pdf_coro": "assets/pdf/cdv139_agnello_di_dio_coro.pdf"
     }
   },
   {
@@ -1559,7 +1558,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv140", "santo", "frisina", "santo", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV140_Santo.pdf"
+      "pdf_coro": "assets/pdf/cdv140_santo_coro.pdf"
     }
   },
   {
@@ -1570,7 +1569,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv141", "quanta sete nel mio cuore", "salterio", "comunione"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV141_Quanta_sete_nel_mio_cuore.pdf"
+      "pdf_coro": "assets/pdf/cdv141_quanta_sete_nel_mio_cuore_coro.pdf"
     }
   },
   {
@@ -1581,7 +1580,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv142", "ave maria", "casucci", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV142_Ave_Maria.pdf"
+      "pdf_coro": "assets/pdf/cdv142_ave_maria_coro.pdf"
     }
   },
   {
@@ -1592,7 +1591,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv143", "qui presso a te signor", "cdv", "preghiera"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV143_Qui_presso_a_te_Signor.pdf"
+      "pdf_coro": "assets/pdf/cdv143_qui_presso_a_te_signor_coro.pdf"
     }
   },
   {
@@ -1603,7 +1602,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv144", "lodate maria", "lécot", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV144_Lodate_Maria.pdf"
+      "pdf_coro": "assets/pdf/cdv144_lodate_maria_coro.pdf"
     }
   },
   {
@@ -1614,7 +1613,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv145", "pellegrini di speranza", "meneghello", "giubileo"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV145_Pellegrini_di_speranza.pdf"
+      "pdf_coro": "assets/pdf/cdv145_pellegrini_di_speranza_coro.pdf"
     }
   },
   {
@@ -1625,7 +1624,7 @@ const repertorio = [
     "tempo": "Ordinario",
     "tags": ["cdv146", "gloria", "taizé", "gloria", "ordinario"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV146_Gloria.pdf"
+      "pdf_coro": "assets/pdf/cdv146_gloria_coro.pdf"
     }
   },
   {
@@ -1636,7 +1635,7 @@ const repertorio = [
     "tempo": "Giovedì Santo",
     "tags": ["cdv147", "dove la carità è vera", "frisina", "offertorio", "giovedì santo"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV147_Dove_la_carità_è_vera.pdf"
+      "pdf_coro": "assets/pdf/cdv147_dove_la_carita_e_vera_coro.pdf"
     }
   },
   {
@@ -1647,7 +1646,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv148", "traslazione", "pantaleo", "solennita"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV148_Traslazione.pdf"
+      "pdf_coro": "assets/pdf/cdv148_traslazione_coro.pdf"
     }
   },
   {
@@ -1658,7 +1657,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv149", "magnificat", "berthier", "mariano"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV149_Magnificat.pdf"
+      "pdf_coro": "assets/pdf/cdv149_magnificat_coro.pdf"
     }
   },
   {
@@ -1669,7 +1668,7 @@ const repertorio = [
     "tempo": "",
     "tags": ["cdv150", "servire è regnare", "gen verde", "offertorio"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV150_Servire_è_regnare.pdf"
+      "pdf_coro": "assets/pdf/cdv150_servire_e_regnare_coro.pdf"
     }
   },
   {
@@ -1680,7 +1679,7 @@ const repertorio = [
     "tempo": "Pasqua",
     "tags": ["cdv151", "nei cieli un grido risonò", "cdv", "ingresso", "pasqua"],
     "materiali": {
-        "pdf_coro": "assets/pdf/CDV151_Nei_cieli_un_grido_risonò.pdf"
+      "pdf_coro": "assets/pdf/cdv151_nei_cieli_un_grido_risono_coro.pdf"
     }
   }
 ];

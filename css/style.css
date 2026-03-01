@@ -37,24 +37,27 @@ body {
     transition: opacity var(--velocita-transizione), filter var(--velocita-transizione);
 }
 
+
+			
 .slide {
     position: absolute;
-    top: 0; 
-    left: 0;
-    width: 100%; 
-    height: 100%;
-    background-size: cover; 
-    background-position: center;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover; background-position: center;
     opacity: 0;
-    transform: scale(1.05); /* Leggero zoom iniziale */
-    transition: opacity 3s ease-in-out; /* Cambio foto molto lento */
+    transform: scale(1.05);
+    /* IL SEGRETO È QUI: La transizione deve essere attiva anche in uscita! */
+    transition: opacity 3s ease-in-out, transform 5s ease-out;
 }
 
 .slide.active { 
     opacity: 1; 
-    transform: scale(1); /* Ritorna alla dimensione normale */
-    transition: opacity 3s ease-in-out, transform 5s ease-out;
-}
+    transform: scale(1); 
+    /* Rimosso transition da qui, basta averlo nella classe base */
+}			
+			
+			
+			
 
 .overlay-light {
     position: absolute; 
