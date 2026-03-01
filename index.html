@@ -1,3 +1,29 @@
+<?php
+session_start(); // Inizia a ricordare chi è l'utente
+
+// Definiamo le credenziali (come hai chiesto tu)
+$username_coro = "corista";
+$password_coro = "ADV2026";
+
+// Logica per il Logout (se vuoi uscire)
+if (isset($_GET['action']) && $_GET['action'] == 'logout') {
+    session_destroy();
+    header("Location: index.php");
+    exit;
+}
+
+// Logica per il Login
+$errore = "";
+if (isset($_POST['login'])) {
+    if ($_POST['username'] == $username_coro && $_POST['password'] == $password_coro) {
+        $_SESSION['autorizzato'] = true;
+    } else {
+        $errore = "Credenziali errate, riprova.";
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -24,14 +50,25 @@
     <div id="main-scroll-container">
 
         <section id="hero">
-            <div class="search-wrapper-container">
-                <a href="index.html" id="main-title">Coro delle Vertighe</a>
-                
-                <input type="text" id="main-search" placeholder="Che cercate?">
-                
-                <p id="main-motto">Canta e Cammina</p>
+    <div class="search-wrapper-container">
+        <a href="index.php" id="main-title">Coro delle Vertighe</a>
+
+        <?php if (isset($_SESSION['autorizzato']) && $_SESSION['autorizzato'] === true): ?>
+            <input type="text" id="main-search" placeholder="Che cercate?">
+            <p id="main-motto">Canta e Cammina - <a href="?action=logout" style="color:white; font-size:0.8rem">Esci</a></p>
+        <?php else: ?>
+            <div id="login-box">
+                <form method="POST" action="index.php">
+                    <input type="text" name="username" placeholder="Nome Corista" required class="login-input">
+                    <input type="password" name="password" placeholder="Password" required class="login-input">
+                    <button type="submit" name="login" class="login-button">Entra nell'Archivio</button>
+                </form>
+                <?php if($errore) echo "<p style='color:red; margin-top:10px;'>$errore</p>"; ?>
             </div>
-        </section>
+            <p id="main-motto">Canta e Cammina</p>
+        <?php endif; ?>
+    </div>
+</section>
 
         <div id="results-container" class="hidden">
             <div class="result-placeholder">
