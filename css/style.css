@@ -4,11 +4,11 @@
 
 /* --- 1. VARIABILI GLOBALI E RESET --- */
 :root {
-    --colore-primario: #0056b3; /* Un blu solido per testi importanti */
-    --colore-accento: #e6f2ff; /* Azzurro chiarissimo per sfondi e hover */
+    --colore-primario: #0056b3;
+    --colore-accento: #e6f2ff;
     --bianco-puro: #ffffff;
-    --ombra-morbida: 0 10px 30px rgba(0, 86, 179, 0.1); /* Ombra leggermente azzurrata */
-    --velocita-transizione: 0.9s cubic-bezier(0.25, 1, 0.5, 1); /* Movimento fluido "Apple" */
+    --ombra-morbida: 0 10px 30px rgba(0, 86, 179, 0.1);
+    --velocita-transizione: 0.9s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 * { 
@@ -17,28 +17,37 @@
     box-sizing: border-box; 
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; 
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Margine per lo scroll fluido */
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--bianco-puro);
     color: #333;
-    overflow-x: hidden; /* Evita lo scroll orizzontale */
 }
 
-/* =========================================
-   2. SFONDO E SLIDER IMMAGINI
-   ========================================= */
+#main-scroll-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* --- 2. SFONDO E SLIDER IMMAGINI --- */
 #bg-container {
     position: fixed;
-    top: 0; 
-    left: 0;
-    width: 100%; 
-    height: 100vh;
-    z-index: -1; /* Mantiene lo sfondo dietro a tutto il contenuto */
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    z-index: -1;
     transition: opacity var(--velocita-transizione), filter var(--velocita-transizione);
 }
 
-
-			
 .slide {
     position: absolute;
     top: 0; left: 0;
@@ -46,463 +55,80 @@ body {
     background-size: cover; background-position: center;
     opacity: 0;
     transform: scale(1.05);
-    /* IL SEGRETO È QUI: La transizione deve essere attiva anche in uscita! */
     transition: opacity 3s ease-in-out, transform 5s ease-out;
 }
 
 .slide.active { 
     opacity: 1; 
     transform: scale(1); 
-    /* Rimosso transition da qui, basta averlo nella classe base */
-}			
-			
-			
-			
+}           
 
 .overlay-light {
     position: absolute; 
-    top: 0; 
-    left: 0;
-    width: 100%; 
-    height: 100%;
-    /* Sfumatura da bianco in alto a semitrasparente in basso per leggibilità */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: linear-gradient(to bottom, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.1) 100%);
 }
 
-/* --- Transizioni dello Sfondo in base allo stato --- */
-body.is-scrolled #bg-container { 
-    opacity: 0.2; 
-    filter: blur(10px); /* Sfoca lo sfondo scendendo */
-}
+body.is-scrolled #bg-container { opacity: 0.2; filter: blur(10px); }
+body.is-searching #bg-container { opacity: 0; }
 
-body.is-searching #bg-container { 
-    opacity: 0; /* Nasconde lo sfondo durante la ricerca */
-}
-
-
-/* =========================================
-   3. SEZIONE HERO (TITOLO E BARRA RICERCA)
-   ========================================= */
-#hero {
-    min-height: 100vh; /* Occupa tutto lo schermo all'avvio */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    transition: all var(--velocita-transizione);
-}
-
-.search-wrapper-container {
-    width: 100%;
-    max-width: 900px; /* Spazio per la barra allargata */
+/* --- 3. TITOLI E MOTTO (Dividono matematicamente lo schermo) --- */
+.header-titles {
+    min-height: 40vh; /* Prende il 40% superiore dello schermo */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra orizzontalmente tutti gli elementi */
-    text-align: center;
+    justify-content: flex-end; /* Spinge i testi in basso vicino alle mattonelle */
+    align-items: center;
+    padding-bottom: 2vh;
+    position: relative;
+    z-index: 10;
 }
 
-/* --- TITOLO PRINCIPALE (Modern Fluid Typography) --- */
 #main-title {
-    display: inline-block;
-    /* Usa clamp() per ridimensionarsi automaticamente senza andare a capo */
-    font-size: clamp(1.8rem, 8vw, 4.5rem); 
-    font-weight: 700;
+    font-size: clamp(2.2rem, 7vw, 4.8rem);
+    font-weight: 800;
     color: var(--colore-primario);
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: -1px; /* Look compatto e moderno */
-    white-space: nowrap; /* Impedisce SEMPRE l'andata a capo */
-    margin-bottom: 25px;
-    /* Profondità con ombra leggera */
-    text-shadow: 0 10px 20px rgba(0, 86, 179, 0.1);
-    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    letter-spacing: -1px;
+    white-space: nowrap;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 30px rgba(255, 255, 255, 0.8);
+    transition: all 0.6s ease;
 }
 
-#main-title:hover {
-    transform: scale(1.02);
-    filter: brightness(1.2);
-}
+#main-title:hover { transform: scale(1.02); filter: brightness(1.2); }
 
-/* --- MOTTO (Stile Scritto a Mano) --- */
 #main-motto {
-    font-family: 'Dancing Script', cursive; /* Richiede importazione in HTML */
-    font-size: clamp(1.2rem, 4vw, 2.2rem);
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2rem, 6vw, 3.5rem);
     color: var(--colore-primario);
-    margin-top: 25px;
-    opacity: 0.9;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5); /* Sottile bagliore */
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-top: 5px;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);
 }
 
-/* --- BARRA DI RICERCA --- */
-#main-search {
-    width: 100%;
-    max-width: 650px; /* Larghezza controllata per mantenere l'equilibrio */
-    padding: 22px 40px;
-    font-size: 1.2rem;
-    font-family: inherit;
-    color: var(--colore-primario);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px); /* Effetto Vetro (Glassmorphism) */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    outline: none;
-    text-align: center;
-    transition: all 0.4s ease;
-}
-
-#main-search::placeholder { 
-    color: #99aabd; 
-    opacity: 1; 
-    transition: opacity 0.3s;
-}
-
-#main-search:focus { 
-    box-shadow: 0 15px 40px rgba(0, 86, 179, 0.15); 
-    transform: translateY(-2px); 
-}
-
-/* --- TRANSIZIONI: STATO "RICERCA ATTIVA" --- */
-body.is-searching #hero {
-    min-height: 20vh; /* La sezione si accorcia */
-    align-items: flex-start; /* Gli elementi scorrono in alto */
-    padding-top: 60px;
-}
-
-body.is-searching #main-title {
-    font-size: 1.4rem; /* Il titolo diventa piccolo */
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    opacity: 0.8;
-}
-
-body.is-searching #main-search::placeholder { 
-    opacity: 0; /* Nasconde il testo di suggerimento */
-}
-
-body.is-searching #main-motto,
-body.is-scrolled #main-motto {
-    opacity: 0; /* Nasconde il motto */
-    transform: translateY(-10px);
-    pointer-events: none;
-}
-
-
-/* =========================================
-   4. AREA RISULTATI (Ricerca Attiva)
-   ========================================= */
-#results-container {
-    max-width: 800px; 
-    margin: 0 auto; 
-    padding: 20px;
-    opacity: 0; 
-    transform: translateY(20px); /* Posizione iniziale nascosta in basso */
-    transition: all 0.5s ease;
-}
-
-.hidden { display: none; }
-
-body.is-searching #results-container:not(.hidden) {
-    opacity: 1; 
-    transform: translateY(0); /* Appare spostandosi verso l'alto */
-    transition-delay: 0.3s; /* Ritardo per far prima scivolare la barra */
-}
-
-.result-placeholder { 
-    text-align: center; 
-    padding: 50px; 
-    color: #99aabd; 
-}
-
-
-/* =========================================
-   5. SEZIONE SECONDARIA (I 3 BOTTONI SCROLL)
-   ========================================= */
-#secondary-sections {
-    min-height: 80vh; 
-    display: flex; 
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    padding: 50px 20px;
-    opacity: 0; 
-    transform: translateY(50px);
-    transition: all var(--velocita-transizione);
-}
-
-/* Appaiono solo quando si scrolla (e la ricerca è inattiva) */
-body.is-scrolled:not(.is-searching) #secondary-sections {
-    opacity: 1; 
-    transform: translateY(0);
-}
-
-body.is-searching #secondary-sections { 
-    display: none; 
-}
-
-.cards-grid {
-    display: flex; 
-    gap: 30px; 
-    flex-wrap: wrap; 
-    justify-content: center;
-}
-
-.card-button {
-    background: var(--bianco-puro);
-    text-decoration: none; 
-    color: #333;
-    padding: 40px 30px;
-    border-radius: 25px;
-    box-shadow: var(--ombra-morbida);
-    text-align: center;
-    min-width: 250px;
-    border: 1px solid transparent;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.card-button:hover {
-    transform: translateY(-10px); /* Effetto sollevamento */
-    box-shadow: 0 20px 40px rgba(0, 86, 179, 0.15);
-    border-color: var(--colore-accento);
-}
-
-.icon { 
-    font-size: 3rem; 
-    display: block; 
-    margin-bottom: 20px; 
-}
-
-.card-button h3 { 
-    color: var(--colore-primario); 
-    margin-bottom: 10px; 
-    font-weight: 600;
-}
-
-.card-button p { 
-    color: #666; 
-    font-size: 0.9rem; 
-}
-											  
-
-/* =========================================
-   6. FOOTER
-   ========================================= */
-
-   #footer-section {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Centra orizzontalmente */
-    padding: 40px 20px;
-    position: relative;
-    z-index: 10;
-}
-
-footer { 
-    text-align: center;
-    color: #3b424a; /* Grigio cenere scuro/antracite */
-    font-size: 0.95rem; 
-    font-weight: 600;
-    text-shadow: 0 1px 3px rgba(255,255,255,0.6); /* Aiuta la leggibilità sullo sfondo */
-}
-											  
-
-/* =========================================
-   7. STILE DELLE CARD EVOLUTE E MATERIALI
-   ========================================= */
-
-.result-card-evolved {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: var(--ombra-morbida);
-    border: 1px solid rgba(0, 86, 179, 0.1);
-    text-align: left; /* Allinea il testo a sinistra per eleganza */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-}
-
-.result-card-evolved:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 86, 179, 0.15);
-}
-
-.card-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.tag-numero {
-    background: var(--colore-primario);
-    color: var(--bianco-puro);
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin-right: 15px;
-}
-
-.card-header h4 {
-    color: var(--colore-primario);
-    font-size: 1.3rem;
-    margin: 0;
-}
-
-.card-subtitle {
-    color: #666;
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-    padding-left: 70px; /* Si allinea sotto il titolo, saltando il numerino azzurro */
-}
-
-/* --- LA GRIGLIA DEI PULSANTI MULTIPLI --- */
-.materiali-grid {
-    display: flex;
-    flex-wrap: wrap; /* Se ci sono tanti pulsanti, vanno a capo da soli */
-    gap: 10px;
-    padding-left: 70px; 
-}
-
-/* Stile base di tutti i bottoncini */
-.btn-materiale {
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.2s ease;
-}
-
-/* Colore per i PDF (Rosso/Rosa) */
-.btn-pdf {
-    background-color: #fce8e6;
-    color: #d93025;
-    border: 1px solid rgba(217, 48, 37, 0.2);
-}
-.btn-pdf:hover { background-color: #d93025; color: white; }
-
-/* Colore per Audio Completo (Verde) */
-.btn-audio {
-    background-color: #e6f4ea;
-    color: #188038;
-    border: 1px solid rgba(24, 128, 56, 0.2);
-}
-.btn-audio:hover { background-color: #188038; color: white; }
-
-/* Colore per le Singole Voci: S, C, T, B (Azzurro, quadrati piccoli) */
-.btn-voce {
-    background-color: #e8f0fe;
-    color: #1a73e8;
-    border: 1px solid rgba(26, 115, 232, 0.2);
-    width: 36px;
-    height: 36px;
-    justify-content: center;
-    padding: 0;
-    border-radius: 12px; /* Un po' più squadrati per le singole lettere */
-}
-.btn-voce:hover { background-color: #1a73e8; color: white; }											  
-											  
-											  
-
-/* =========================================
-   8. STILE MODULO DI LOGIN
-   ========================================= */
-
-#login-box {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(15px);
-    padding: 30px;
-    border-radius: 30px;
-    box-shadow: var(--ombra-morbida);
-    width: 100%;
-    max-width: 400px; /* Più stretto della barra ricerca */
-    margin: 0 auto;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.login-input {
-    padding: 15px 20px;
-    border-radius: 15px;
-    border: 1px solid rgba(0, 86, 179, 0.1);
-    font-family: inherit;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.login-input:focus {
-    border-color: var(--colore-primario);
-    background: white;
-}
-
-.login-button {
-    padding: 15px;
-    border-radius: 15px;
-    border: none;
-    background: var(--colore-primario);
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.login-button:hover {
-    filter: brightness(1.2);
-    transform: translateY(-2px);
-}
-
-.error-message {
-    color: #d93025;
-    font-size: 0.85rem;
-    margin-top: 10px;
-    font-weight: 600;
-}
-
-
-/* =========================================
-   9. VETRINA PUBBLICA E MENU (In base al disegno)
-   ========================================= */
-
-/* Posizionamento fisso del titolo nell'header */
-.header-titles {
-    text-align: center;
-    padding-top: 50px;
-    position: relative;
-    z-index: 10;
-}
-
+/* --- 4. VETRINA MATTONELLE --- */
 #hero-public {
-    min-height: 60vh;
+    min-height: 60vh; /* Prende il 60% inferiore dello schermo. 40+60 = 100% Perfetto! */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Attacca i pulsanti in alto vicino al motto */
+    padding-top: 3vh;
+    width: 100%;
 }
 
 .public-cards-wrapper {
     display: flex;
-    gap: 30px;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 20px;
+    gap: 30px; /* SU PC ARIOSE E LARGHE! */
+    width: 100%;
+    padding: 0 20px;
 }
 
-
 .public-card {
-    background: rgba(255, 255, 255, 0.15); /* Abbassato da 0.35 a 0.15 per una trasparenza quasi totale */
-    backdrop-filter: blur(8px); /* Sfocatura leggermente ridotta per far vedere meglio i contorni delle foto */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
     width: 150px;
     height: 150px;
     display: flex;
@@ -511,8 +137,8 @@ footer {
     text-decoration: none;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.4); /* Bordo delicato */
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Movimento morbidissimo */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .public-card h3 {
@@ -520,24 +146,16 @@ footer {
     font-size: 1.2rem;
     text-transform: uppercase;
     font-weight: 700;
-    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9); /* Effetto alone per leggere sempre la scritta */
-    transition: all 0.3s ease;
-}
-
-/* Quando ci passi sopra col mouse, la mattonella si "accende" e sale */
-.public-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.9); /* Diventa bianca e solida per farsi cliccare */
-    box-shadow: 0 15px 35px rgba(0, 86, 179, 0.2);
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);
 }
 
 .public-card:hover {
     transform: translateY(-10px);
-    background: var(--bianco-puro);
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 15px 35px rgba(0, 86, 179, 0.2);
 }
 
-/* --- MENU AD HAMBURGER --- */
+/* --- 5. MENU AD HAMBURGER --- */
 .top-nav {
     position: absolute;
     top: 30px;
@@ -548,201 +166,262 @@ footer {
 .menu-icon {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 12px;
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
+    padding: 5px; 
 }
 
 .menu-icon span {
-    width: 30px;
-    height: 3px;
+    width: 35px; height: 4px;
     background-color: var(--colore-primario);
     border-radius: 5px;
-    transition: 0.3s;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
+
+.menu-icon.open span:nth-child(1) { transform: translateY(12px) rotate(45deg); background-color: #d93025; }
+.menu-icon.open span:nth-child(2) { opacity: 0; transform: scale(0); }
+.menu-icon.open span:nth-child(3) { transform: translateY(-12px) rotate(-45deg); background-color: #d93025; }
 
 .nav-links {
-    display: none; /* Nascosto di default */
+    display: none; 
     position: absolute;
-    top: 50px;
-    right: 0;
-    background: white;
+    top: 50px; right: -10px;
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     list-style: none;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    min-width: 200px;
+    padding: 25px 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    min-width: 220px;
+    text-align: right;
 }
 
-.nav-links.active {
-    display: block; /* Mostrato quando cliccato */
-}
-
+.nav-links.active { display: block; }
 .nav-links li { margin-bottom: 15px; }
 .nav-links li:last-child { margin-bottom: 0; }
-
 .nav-links a {
     text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    font-size: 1.1rem;
+    color: var(--colore-primario);
+    font-weight: 700;
+    font-size: 1.15rem;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);
+    transition: color 0.3s;
 }
-
+.nav-links a:hover { color: #d93025; }
 .private-link { color: #d93025 !important; }
 
-
-/* --- ANIMAZIONE "X" DEL MENU HAMBURGER --- */
-/* Assicuriamoci che le lineette abbiano un movimento fluido */
-
-.menu-icon span {
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Effetto "molla" elastico */
-}
-
-/* Quando il menu è aperto (classe .open aggiunta da JS) */
-.menu-icon.open span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-    background-color: #d93025; /* Cambia colore in rosso "chiudi" */
-}
-
-.menu-icon.open span:nth-child(2) {
-    opacity: 0; /* La linea centrale sparisce */
-    transform: scale(0); /* Si rimpicciolisce scomparendo */
-}
-
-.menu-icon.open span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-    background-color: #d93025; /* Cambia colore in rosso "chiudi" */
-}
-
-
-/* =========================================
-   10. STILE SEZIONI CONTENUTO (One-Page Layout)
-   ========================================= */
-
-/* Trucco magico: fa scorrere la pagina dolcemente quando clicchi sui link # */
-html {
-    scroll-behavior: smooth;
-    /* Aggiunge un margine in alto quando scorriamo, così il titolo non viene coperto */
-    scroll-padding-top: 120px; 
-}
-
-/* Contenitore generale di tutte le stanze sotto l'Hero */
+/* --- 6. LE STANZE (One-Page Content) --- */
 .content-sections-container {
-    background-color: var(--bianco-puro); /* Sfondo bianco solido per la lettura */
+    background-color: var(--bianco-puro);
     position: relative;
-    z-index: 5; /* Sopra le foto di sfondo ma sotto il menu */
-    box-shadow: 0 -20px 40px rgba(0,0,0,0.05); /* Ombra delicata verso l'alto per staccare dall'Hero */
+    z-index: 5;
+    box-shadow: 0 -20px 40px rgba(0,0,0,0.05);
 }
 
-/* Stile base di ogni singola "stanza" (Coro, FFB, Santuario) */
 .info-section {
     display: flex;
-    align-items: center; /* Centra verticalmente testo e immagine */
+    align-items: center;
     justify-content: center;
-    padding: 100px 50px; /* Grande spazio verticale per dare respiro */
-    gap: 80px; /* Spazio tra il blocco di testo e l'immagine */
-    max-width: 1400px; /* Larghezza massima per non disperdere il testo su monitor giganti */
-    margin: 0 auto; /* Centra la stanza sulla pagina */
+    padding: 100px 50px;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-/* --- Alternanza Sfondi --- */
-/* La stanza FFB (centrale) avrà uno sfondo grigio chiarissimo per spezzare il ritmo */
 .info-section.bg-grigio {
-    background-color: #f7f9fc; /* Un grigio-azzurro etereo e pulito */
-    /* Trucco per far estendere il colore su tutta la larghezza dello schermo */
+    background-color: #f7f9fc;
     width: 100vw;
     position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    /* Ripristiniamo l'allineamento del contenuto interno */
+    left: 50%; right: 50%;
+    margin-left: -50vw; margin-right: -50vw;
     padding-left: calc(50vw - 700px + 50px);
     padding-right: calc(50vw - 700px + 50px);
 }
 
-/* --- Allineamento Testo e Immagine --- */
-.testo-sezione {
-    flex: 1; /* Prende metà dello spazio disponibile */
-    max-width: 600px;
-}
-
+.testo-sezione { flex: 1; max-width: 600px; }
 .immagine-sezione {
-    flex: 1; /* Prende l'altra metà dello spazio disponibile */
-    height: 450px; /* Altezza fissa per le immagini per ordine visivo */
-    background-size: cover;
-    background-position: center;
-    border-radius: 30px; /* Angoli smussati come le mattonelle */
-    box-shadow: var(--ombra-morbida); /* Stessa ombra delicata dei pulsanti */
-    border: 5px solid white; /* Cornice bianca elegante */
+    flex: 1; height: 450px;
+    background-size: cover; background-position: center;
+    border-radius: 30px;
+    box-shadow: var(--ombra-morbida);
+    border: 5px solid white;
 }
 
-/* --- Tipografia delle Stanze --- */
 .testo-sezione h2 {
-    font-size: 2.8rem; /* Titolo grande e importante */
+    font-size: 2.8rem;
     color: var(--colore-primario);
     margin-bottom: 25px;
     font-weight: 700;
-    position: relative;
 }
 
-/* Piccola linea decorativa sotto il titolo h2 */
 .testo-sezione h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #d93025; /* Rosso accento (come la X del menu) */
-    margin-top: 10px;
-    border-radius: 2px;
+    content: ''; display: block; width: 60px; height: 4px;
+    background-color: #d93025; margin-top: 10px; border-radius: 2px;
 }
 
 .testo-sezione p {
-    font-size: 1.15rem; /* Testo leggibile e arioso */
-    line-height: 1.8; /* Interlinea ampia per non affaticare la vista */
-    color: #444; /* Un grigio molto scuro, meno aggressivo del nero puro */
-    margin-bottom: 20px;
+    font-size: 1.15rem; line-height: 1.8;
+    color: #444; margin-bottom: 20px;
 }
 
+
+/* --- 7. FOOTER E TASTO 'TORNA SU' --- */
+#footer-section {
+    width: 100%;
+    display: flex; justify-content: center;
+    padding: 40px 20px;
+    background-color: var(--bianco-puro);
+}
+
+footer { 
+    color: #3b424a; font-size: 0.95rem; font-weight: 600;
+}
+
+.back-to-top {
+    position: fixed; bottom: 30px; right: 30px;
+    width: 50px; height: 50px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    color: var(--colore-primario);
+    z-index: 99; opacity: 0; pointer-events: none;
+    transform: translateY(20px); transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.back-to-top:hover {
+    background: var(--bianco-puro); transform: translateY(-5px);
+}
+
+body.is-scrolled .back-to-top { opacity: 1; pointer-events: all; transform: translateY(0); }
+
+
+/* --- 8. LOGIN E ARCHIVIO (Retrobottega) --- */
+#hero {
+    min-height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+    padding: 20px; transition: all var(--velocita-transizione);
+}
+
+.search-wrapper-container {
+    width: 100%; max-width: 900px;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+
+#login-box {
+    background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(15px);
+    padding: 30px; border-radius: 30px;
+    box-shadow: var(--ombra-morbida);
+    width: 100%; max-width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.login-form { display: flex; flex-direction: column; gap: 15px; }
+.login-input { padding: 15px 20px; border-radius: 15px; border: 1px solid rgba(0, 86, 179, 0.1); font-size: 1rem; outline: none; }
+.login-input:focus { border-color: var(--colore-primario); background: white; }
+.login-button { padding: 15px; border-radius: 15px; border: none; background: var(--colore-primario); color: white; font-size: 1rem; font-weight: 600; cursor: pointer; }
+.login-button:hover { filter: brightness(1.2); transform: translateY(-2px); }
+.error-message { color: #d93025; font-size: 0.85rem; margin-top: 10px; font-weight: 600; }
+
+#main-search {
+    width: 100%; max-width: 650px;
+    padding: 22px 40px; font-size: 1.2rem;
+    color: var(--colore-primario); border-radius: 50px;
+    background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); outline: none; text-align: center;
+}
+#main-search:focus { box-shadow: 0 15px 40px rgba(0, 86, 179, 0.15); transform: translateY(-2px); }
+
+body.is-searching #hero { min-height: 20vh; align-items: flex-start; padding-top: 60px; }
+body.is-searching #main-motto { opacity: 0; pointer-events: none; }
+
+#results-container {
+    max-width: 800px; margin: 0 auto; padding: 20px;
+    opacity: 0; transform: translateY(20px); transition: all 0.5s ease;
+}
+.hidden { display: none; }
+body.is-searching #results-container:not(.hidden) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+.result-placeholder { text-align: center; padding: 50px; color: #99aabd; }
+
+.result-card-evolved {
+    background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+    border-radius: 20px; padding: 25px; margin-bottom: 20px;
+    box-shadow: var(--ombra-morbida); border: 1px solid rgba(0, 86, 179, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.result-card-evolved:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 86, 179, 0.15); }
+.card-header { display: flex; align-items: center; margin-bottom: 5px; }
+.tag-numero { background: var(--colore-primario); color: var(--bianco-puro); padding: 6px 14px; border-radius: 8px; font-weight: 600; margin-right: 15px; }
+.card-header h4 { color: var(--colore-primario); font-size: 1.3rem; margin: 0; }
+.card-subtitle { color: #666; font-size: 0.95rem; margin-bottom: 20px; padding-left: 70px; }
+.materiali-grid { display: flex; flex-wrap: wrap; gap: 10px; padding-left: 70px; }
+.btn-materiale { text-decoration: none; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.btn-pdf { background-color: #fce8e6; color: #d93025; border: 1px solid rgba(217, 48, 37, 0.2); }
+.btn-audio { background-color: #e6f4ea; color: #188038; border: 1px solid rgba(24, 128, 56, 0.2); }
+.btn-voce { background-color: #e8f0fe; color: #1a73e8; border: 1px solid rgba(26, 115, 232, 0.2); width: 36px; height: 36px; justify-content: center; padding: 0; border-radius: 12px; }
+
+
 /* =========================================
-   11. RESPONSIVE DESIGN (Adattamento Mobile)
+   9. RESPONSIVE DESIGN (Adattamento Mobile)
    ========================================= */
-/* Quando lo schermo è più piccolo di 1024px (Tablet e Cellulari) */
 @media (max-width: 1024px) {
-    .info-section {
-        flex-direction: column; /* Impila testo e immagine uno sotto l'altro */
-        padding: 60px 20px;
-        gap: 40px;
-        text-align: center; /* Centra il testo */
+    
+    .header-titles {
+        min-height: 40vh; 
+        padding-bottom: 0;
+        padding-left: 15px; padding-right: 15px;
+        width: 100%; /* Forza la larghezza totale */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Forza l'allineamento al centro */
+    }
+    
+    #main-title { 
+        font-size: clamp(1.4rem, 8vw, 3rem); 
+        white-space: normal; 
+        line-height: 1.2; 
+        text-align: center; /* Anche il testo stesso viene centrato */
+        width: 100%;
     }
 
-    /* Su mobile, l'immagine deve venire SEMPRE dopo il testo, indipendentemente dall'ordine HTML */
-    .info-section { flex-direction: column; }
-    
-    /* Forza l'immagine a venire dopo il testo */
-    .immagine-sezione { order: 2; }
-    .testo-sezione { order: 1; }
+    #main-motto { 
+        font-size: clamp(1.6rem, 6.5vw, 2.5rem); 
+        margin-top: 10px; 
+    }
 
-    /* Nella stanza FFB (dove avevamo invertito l'ordine nell'HTML), forziamo l'ordine mobile */
+    
+    #hero-public {
+        min-height: 60vh; /* Mantiene il 60% su mobile */
+        padding-top: 0;
+    }
+
+    .public-cards-wrapper {
+        gap: 15px; /* Mattonelle ravvicinate SU MOBILE */
+        padding: 10px;
+    }
+
+    .public-card { width: 100px; height: 100px; border-radius: 15px; }
+    .public-card h3 { font-size: 0.85rem; }
+
+    .top-nav { top: 20px; right: 20px; }
+    
+    .info-section { flex-direction: column; padding: 60px 20px; gap: 40px; text-align: center; }
+    .immagine-sezione { order: 2; width: 100%; height: 300px; max-width: 500px; }
+    .testo-sezione { order: 1; }
+    
     #sezione-ffb { flex-direction: column !important; }
     #sezione-ffb .immagine-sezione { order: 2 !important; }
     #sezione-ffb .testo-sezione { order: 1 !important; }
 
     .testo-sezione h2 { font-size: 2.2rem; }
-    .testo-sezione h2::after { margin: 10px auto 0; } /* Centra la linea decorativa */
+    .testo-sezione h2::after { margin: 10px auto 0; }
+    .info-section.bg-grigio { padding-left: 20px; padding-right: 20px; }
 
-    .immagine-sezione {
-        width: 100%; /* L'immagine prende tutta la larghezza */
-        height: 300px; /* Altezza ridotta su mobile */
-        max-width: 500px; /* Ma non esagerare */
-    }
-
-    /* Aggiustiamo il padding della stanza grigia centrale su mobile */
-    .info-section.bg-grigio {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+    .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
 }
