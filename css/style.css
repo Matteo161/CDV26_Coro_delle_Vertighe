@@ -266,6 +266,79 @@ body.is-searching #bg-container { opacity: 0; }
     color: #444; margin-bottom: 20px;
 }
 
+/* --- STILE SCHEDA ORARI MODERNA (Glassmorphism) --- */
+.scheda-orari-moderna {
+    background: rgba(255, 255, 255, 0.4); /* Vetro più trasparente ed elegante */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
+    padding: 30px;
+    margin-top: 35px;
+    box-shadow: var(--ombra-morbida);
+}
+
+.orari-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    color: var(--colore-primario);
+}
+
+.orari-header h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.orario-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 86, 179, 0.1); /* Linea divisoria sottilissima e azzurrata */
+}
+
+.orario-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.orario-item .giorno {
+    font-weight: 600;
+    color: #444;
+    font-size: 1.05rem;
+}
+
+/* La "pillola" elegante per gli orari */
+.orario-item .ora {
+    background: var(--bianco-puro);
+    color: var(--colore-primario);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0, 86, 179, 0.05);
+}
+
+/* Allineamento globale icone SVG */
+.svg-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .orario-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .orario-item .ora {
+        align-self: flex-start;
+    }
+}
+
 
 /* --- 7. FOOTER E TASTO 'TORNA SU' --- */
 #footer-section {

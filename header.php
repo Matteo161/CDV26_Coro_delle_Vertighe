@@ -28,7 +28,17 @@
             <li><a href="index.php#sezione-santuario">Il Santuario</a></li>
             <li><a href="index.php#sezione-coro">Il Coro</a></li>
             <li><a href="index.php#sezione-ffb">La Fraternità</a></li>
-            <li><a href="archivio.php" class="private-link">Area Coristi 🔒</a></li>
+
+            <li>
+                <a href="archivio.php" class="private-link" style="display: flex; align-items: center; gap: 6px;">
+                    Area Coristi
+                    <svg class="svg-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </a>
+            </li>
+
         </ul>
     </nav>
 

@@ -24,16 +24,33 @@ include 'header.php';
             <h2>Santuario S. Maria delle Vertighe</h2>
             <p>Il Santuario di Santa Maria delle Vertighe è un luogo di pace, preghiera e devozione affidato alla cura della Fraternità Francescana di Betania. Vi accogliamo con gioia per celebrare insieme la fede.</p>
             
-            <div class="scheda-orari">
-                <h3><span class="icona-orologio">🕒</span> Orari Liturgie</h3>
-                <ul class="lista-orari">
-                    <li><strong>Feriale:</strong> <span>S. Messa ore 18:00</span></li>
-                    <li><strong>Prefestivo:</strong> <span>S. Messa ore 18:00</span></li>
-                    <li><strong>Festivo:</strong> <span>S. Messe ore 09:00, 11:00, 18:00</span></li>
-                    <li><strong>Lodi Mattutine:</strong> <span>Tutti i giorni ore 07:30</span></li>
-                    <li><strong>Vespri:</strong> <span>Tutti i giorni ore 19:00</span></li>
-                </ul>
+            <div class="scheda-orari-moderna">
+                <div class="orari-header">
+                    <svg class="svg-icon" viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <h3>Orari Liturgie</h3>
+                </div>
+                
+                <div class="orario-item">
+                    <span class="giorno">Feriale e Prefestivo</span>
+                    <span class="ora">07:30 &bull; 18:00</span>
+                </div>
+                <div class="orario-item">
+                    <span class="giorno">Festivo</span>
+                    <span class="ora">08:00 &bull; 10:00 &bull; 11:30 &bull; 17:00 &bull;18:00</span>
+                </div>
+                <div class="orario-item">
+                    <span class="giorno">S. Rosario</span>
+                    <span class="ora">08:30 &bull; 17:15</span>
+                </div>
+                <div class="orario-item">
+                    <span class="giorno">Vespri</span>
+                    <span class="ora">17:45</span>
+                </div>
             </div>
+
         </div>
         <div class="immagine-sezione" style="background-image: url('assets/img/santuario_esterno_2025.jpg');"></div>
     </section>

@@ -94,9 +94,19 @@ if (searchInput) {
                     const m = canto.materiali || {}; 
                     let buttonsHtml = '';
 
-                    if (m.pdf_coro) buttonsHtml += `<a href="${m.pdf_coro}" target="_blank" title="PDF Coro" class="btn-materiale btn-pdf">📄 Coro</a>`;
-                    if (m.pdf_organo) buttonsHtml += `<a href="${m.pdf_organo}" target="_blank" title="PDF Organo" class="btn-materiale btn-pdf">🎹 Organo</a>`;
-                    if (m.audio_tutti) buttonsHtml += `<a href="${m.audio_tutti}" target="_blank" title="Audio Tutti" class="btn-materiale btn-audio">🎧 Tutti</a>`;
+                    // --- CREAZIONE BOTTONI CON ICONE SVG INLINE ---
+                    // Icona Documento (PDF)
+                    const iconPdf = `<svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>`;
+                    
+                    // Icona Musica (Organo)
+                    const iconMusic = `<svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>`;
+                    
+                    // Icona Cuffie (Audio Tutti)
+                    const iconAudio = `<svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>`;
+
+                    if (m.pdf_coro) buttonsHtml += `<a href="${m.pdf_coro}" target="_blank" title="PDF Coro" class="btn-materiale btn-pdf">${iconPdf} Coro</a>`;
+                    if (m.pdf_organo) buttonsHtml += `<a href="${m.pdf_organo}" target="_blank" title="PDF Organo" class="btn-materiale btn-pdf">${iconMusic} Organo</a>`;
+                    if (m.audio_tutti) buttonsHtml += `<a href="${m.audio_tutti}" target="_blank" title="Audio Tutti" class="btn-materiale btn-audio">${iconAudio} Tutti</a>`;
                     if (m.audio_s) buttonsHtml += `<a href="${m.audio_s}" target="_blank" title="Audio Soprani" class="btn-materiale btn-voce">S</a>`;
                     if (m.audio_c) buttonsHtml += `<a href="${m.audio_c}" target="_blank" title="Audio Contralti" class="btn-materiale btn-voce">C</a>`;
                     if (m.audio_t) buttonsHtml += `<a href="${m.audio_t}" target="_blank" title="Audio Tenori" class="btn-materiale btn-voce">T</a>`;
@@ -114,13 +124,23 @@ if (searchInput) {
                     `;
                     resultsContainer.innerHTML += card; 
                 });
+            
+            
             } else {
                 resultsContainer.innerHTML = `
                     <div class="result-placeholder">
-                        <h3>Nessun canto trovato 😔</h3>
+                        <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px; color: #99aabd;">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="9" y1="9" x2="13" y2="13"></line>
+                            <line x1="13" y1="9" x2="9" y2="13"></line>
+                        </svg>
+                        <h3>Nessun canto trovato</h3>
                         <p>Prova a cercare un'altra parola o autore.</p>
                     </div>`;
             }
+
+
             setTimeout(() => resultsContainer.style.opacity = 1, 10);
 
         } else {
